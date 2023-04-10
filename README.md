@@ -152,3 +152,9 @@ Example:
 ---
 
 The Sample Generation Language (SGL) is versatile and capable of generating a wide variety of sounds for various music genres and styles. Remember that a dedicated tool or software is required to interpret the SGL format and generate the corresponding audio samples.
+
+## General info
+
+* Version: 2.0.0
+* License: BSD-3
+* The content has been modified and curated by a human, but the samples needs more testing.
