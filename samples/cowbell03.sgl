@@ -1,0 +1,8 @@
+# SampleGenerationLanguage v2.0
+
+FM: Carrier: 1000, Modulator: 1264, ModulationIndex: 1.5
+
+Envelope: Amplitude, Attack: 3ms, Decay: 340ms, Sustain: 0.0, Release: 14ms
+Envelope: Filter, Attack: 3ms, Decay: 390ms, Sustain: 0.0, Release: 14ms
+
+Effect: High-pass, Cutoff: 1000, Mix: 1.0

@@ -1,0 +1,8 @@
+# SampleGenerationLanguage v2.0
+
+Oscillator: Sine, 110, Mix: 1.0
+
+Envelope: Amplitude, Attack: 1ms, Decay: 400ms, Sustain: 0.0, Release: 20ms
+Envelope: Filter, Attack: 1ms, Decay: 450ms, Sustain: 0.0, Release: 20ms
+
+Effect: Low-pass, Cutoff: 500, Mix: 1.0
