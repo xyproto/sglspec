@@ -1,0 +1,10 @@
+# SampleGenerationLanguage v2.0
+
+Granular: Size: 20ms, Overlap: 50%, Window: Hanning, Pitch: 1.0
+Oscillator: Noise, 0, Mix: 1.0
+
+Envelope: Amplitude, Attack: 10ms, Decay: 500ms, Sustain: 0.15, Release: 1000ms
+Envelope: Filter, Attack: 10ms, Decay: 600ms, Sustain: 0.3, Release: 1000ms
+
+Effect: Reverb, Decay: 1.5s, Mix: 0.35
+Effect: High-pass, Cutoff: 500, Mix: 1.0

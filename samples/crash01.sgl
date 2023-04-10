@@ -1,0 +1,9 @@
+# SampleGenerationLanguage v2.0
+
+Oscillator: Noise, 0, Mix: 1.0
+
+Envelope: Amplitude, Attack: 5ms, Decay: 300ms, Sustain: 0.1, Release: 800ms
+Envelope: Filter, Attack: 5ms, Decay: 500ms, Sustain: 0.2, Release: 800ms
+
+Effect: Reverb, Decay: 2s, Mix: 0.4
+Effect: High-pass, Cutoff: 400, Mix: 1.0
