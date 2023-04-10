@@ -1,0 +1,9 @@
+# SampleGenerationLanguage v2.0
+
+Oscillator: Sawtooth, Note, Mix: 0.5
+Oscillator: Square, Note, Mix: 0.5
+
+Envelope: Amplitude, Attack: 10ms, Decay: 300ms, Sustain: 0.8, Release: 400ms
+Envelope: Filter, Attack: 20ms, Decay: 350ms, Sustain: 0.6, Release: 400ms
+
+Effect: Low-pass, Cutoff: 2000, Mix: 1.0

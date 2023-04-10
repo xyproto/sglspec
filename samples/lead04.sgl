@@ -1,0 +1,8 @@
+# SampleGenerationLanguage v2.0
+
+PhysicalModel: String, Stiffness: 0.4, Damping: 0.4, Excitation: Pluck, Mix: 1.0
+
+Envelope: Amplitude, Attack: 25ms, Decay: 390ms, Sustain: 0.65, Release: 550ms
+Envelope: Filter, Attack: 35ms, Decay: 440ms, Sustain: 0.45, Release: 550ms
+
+Effect: Low-pass, Cutoff: 3200, Mix: 1.0

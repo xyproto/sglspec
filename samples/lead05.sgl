@@ -1,0 +1,9 @@
+# SampleGenerationLanguage v2.0
+
+Granular: Size: 100ms, Overlap: 70%, Window: Hanning, Pitch: 1.0
+Oscillator: Triangle, Note, Mix: 1.0
+
+Envelope: Amplitude, Attack: 30ms, Decay: 420ms, Sustain: 0.6, Release: 600ms
+Envelope: Filter, Attack: 40ms, Decay: 470ms, Sustain: 0.4, Release: 600ms
+
+Effect: Low-pass, Cutoff: 3600, Mix: 1.0

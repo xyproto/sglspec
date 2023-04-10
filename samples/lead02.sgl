@@ -1,0 +1,8 @@
+# SampleGenerationLanguage v2.0
+
+Subtractive: Waveform: Pulse, Frequency: Note, PulseWidth: 0.6, Filter: Low-pass, Cutoff: 2200, Resonance: 0.5
+
+Envelope: Amplitude, Attack: 15ms, Decay: 330ms, Sustain: 0.75, Release: 450ms
+Envelope: Filter, Attack: 25ms, Decay: 380ms, Sustain: 0.55, Release: 450ms
+
+Effect: Low-pass, Cutoff: 2400, Mix: 1.0
