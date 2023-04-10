@@ -1,0 +1,8 @@
+# SampleGenerationLanguage v2.0
+
+PhysicalModel: String, Stiffness: 0.1, Damping: 0.3, Excitation: Impulse, Mix: 1.0
+
+Envelope: Amplitude, Attack: 1ms, Decay: 100ms, Sustain: 0.0, Release: 10ms
+Envelope: Filter, Attack: 1ms, Decay: 150ms, Sustain: 0.0, Release: 10ms
+
+Effect: Distortion, Drive: 0.6, Tone: 0.5, Mix: 0.4
