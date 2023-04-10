@@ -1,0 +1,9 @@
+# SampleGenerationLanguage v2.0
+
+Noise: White, Mix: 1.0
+
+Envelope: Amplitude, Attack: 1ms, Decay: 500ms, Sustain: 0.0, Release: 100ms
+Envelope: Filter, Attack: 1ms, Decay: 600ms, Sustain: 0.0, Release: 100ms
+
+Effect: Low-pass, Cutoff: 4000, Mix: 1.0
+Effect: Reverb, Mix: 0.3, Decay: 1000ms

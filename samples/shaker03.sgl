@@ -1,0 +1,9 @@
+# SampleGenerationLanguage v2.0
+
+Additive: Noise, Gain: 0.8, Harmonics: 4
+
+Envelope: Amplitude, Attack: 1ms, Decay: 400ms, Sustain: 0.0, Release: 75ms
+Envelope: Filter, Attack: 1ms, Decay: 500ms, Sustain: 0.0, Release: 75ms
+
+Effect: Low-pass, Cutoff: 3500, Mix: 1.0
+Effect: Reverb, Mix: 0.3, Decay: 1000ms

@@ -1,0 +1,9 @@
+# SampleGenerationLanguage v2.0
+
+Subtractive: Waveform: Triangle, Frequency: 400, Filter: Band-pass, Cutoff: 1000, Resonance: 0.6
+Subtractive: Waveform: Noise, Filter: High-pass, Cutoff: 5000, Mix: 0.6
+
+Envelope: Amplitude, Attack: 1ms, Decay: 1800ms, Sustain: 0.0, Release: 45ms
+Envelope: Filter, Attack: 1ms, Decay: 1850ms, Sustain: 0.0, Release: 45ms
+
+Effect: Reverb, Mix: 0.3, Decay: 1000ms
