@@ -11,7 +11,6 @@ import (
 	sglantlr "github.com/xyproto/sglspec/antlr"
 )
 
-
 func floatBufferToIntBuffer(buf *audio.FloatBuffer) *audio.IntBuffer {
 	intData := make([]int, len(buf.Data))
 	for i, v := range buf.Data {
