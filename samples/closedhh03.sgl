@@ -1,0 +1,8 @@
+# SampleGenerationLanguage v2.0
+
+PhysicalModel: Membrane, Tension: 0.9, Damping: 0.3, Excitation: Noise, Mix: 1.0
+
+Envelope: Amplitude, Attack: 1ms, Decay: 50ms, Sustain: 0.0, Release: 10ms
+Envelope: Filter, Attack: 1ms, Decay: 70ms, Sustain: 0.0, Release: 10ms
+
+Effect: High-pass, Cutoff: 7000, Mix: 1.0

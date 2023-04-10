@@ -1,0 +1,9 @@
+# SampleGenerationLanguage v2.0
+
+Granular: Size: 50ms, Overlap: 75%, Window: Hanning, Pitch: 1.0
+Oscillator: Sawtooth, 55, Mix: 1.0
+
+Envelope: Amplitude, Attack: 25ms, Decay: 300ms, Sustain: 0.5, Release: 300ms
+Envelope: Filter, Attack: 30ms, Decay: 250ms, Sustain: 0.2, Release: 300ms
+
+Effect: Low-pass, Cutoff: 700, Mix: 1.0

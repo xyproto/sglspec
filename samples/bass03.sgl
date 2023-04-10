@@ -1,0 +1,8 @@
+# SampleGenerationLanguage v2.0
+
+FM: Carrier: 55, Modulator: 165, ModulationIndex: 2.5
+
+Envelope: Amplitude, Attack: 15ms, Decay: 250ms, Sustain: 0.6, Release: 250ms
+Envelope: Filter, Attack: 20ms, Decay: 200ms, Sustain: 0.4, Release: 250ms
+
+Effect: Low-pass, Cutoff: 600, Mix: 1.0

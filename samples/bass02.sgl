@@ -1,0 +1,8 @@
+# SampleGenerationLanguage v2.0
+
+Subtractive: Waveform: Sawtooth, Frequency: 55, Filter: Low-pass, Cutoff: 200, Resonance: 0.6
+
+Envelope: Amplitude, Attack: 10ms, Decay: 220ms, Sustain: 0.65, Release: 220ms
+Envelope: Filter, Attack: 15ms, Decay: 180ms, Sustain: 0.5, Release: 220ms
+
+Effect: Low-pass, Cutoff: 550, Mix: 1.0
