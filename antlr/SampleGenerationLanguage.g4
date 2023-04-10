@@ -28,19 +28,20 @@ karplusStrong: 'KarplusStrong:' 'Frequency:' frequency COMMA 'Decay:' decay COMM
 formant: 'Formant:' 'Filter:' filterType COMMA 'Frequency:' frequency COMMA 'Bandwidth:' bandwidth COMMA 'Gain:' gain;
 
 waveform: ('Sine' | 'Square' | 'Triangle' | 'Sawtooth' | 'Noise');
-frequency: NUMBER 'Hz';
+frequency: NUMBER 'Hz'? ;
 mix: NUMBER;
 envType: ('Amplitude' | 'Filter');
 attackTime: NUMBER 'ms';
 decayTime: NUMBER 'ms';
 sustainLevel: NUMBER;
 releaseTime: NUMBER 'ms';
-effectType: ('Reverb' | 'Delay' | 'Chorus' | 'Distortion');
-effectParam: effectReverb | effectDelay | effectChorus | effectDistortion;
+effectType: ('Reverb' | 'Delay' | 'Chorus' | 'Distortion' | 'High-pass' | 'Low-pass' | 'Noise');
+effectParam: effectReverb | effectDelay | effectChorus | effectDistortion | effectFilter;
 effectReverb: 'Decay:' decayTime | 'Mix:' mix;
 effectDelay: 'Time:' delayTime COMMA 'Feedback:' feedback COMMA 'Mix:' mix;
 effectChorus: 'Rate:' rate COMMA 'Depth:' depth COMMA 'Mix:' mix;
 effectDistortion: 'Drive:' drive COMMA 'Tone:' tone COMMA 'Mix:' mix;
+effectFilter: 'Cutoff:' cutoff COMMA 'Mix:' mix;
 fmType: ('Carrier' | 'Modulator');
 size: NUMBER 'ms';
 overlap: NUMBER '%';
@@ -61,7 +62,7 @@ gain: NUMBER;
 
 delayTime: NUMBER 'ms';
 feedback: NUMBER;
-rate: NUMBER 'Hz';
+rate: NUMBER 'Hz'? ;
 depth: NUMBER;
 drive: NUMBER;
 tone: NUMBER;
