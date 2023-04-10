@@ -6,6 +6,8 @@ The Sample Generation Language (SGL) is a text-based format for describing and g
 
 Note that the included Go files are a work in progress!
 
+[Antlr frammar file](antlr/SampleGenerationLanguage.g4)
+
 ## Header
 
 The header consists of a single line that starts with a hash symbol (#) and indicates the version of the format.
