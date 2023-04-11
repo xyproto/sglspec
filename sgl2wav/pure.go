@@ -106,7 +106,7 @@ func AudioReverb(data []float64, mix float64, decayTime time.Duration, sampleRat
 	combDelay := []int{1617, 1557, 1491, 1422, 1277, 1116, 897, 778}
 	combGain := make([]float64, combCount)
 	for i := 0; i < combCount; i++ {
-		combGain[i] = math.Pow(10, -3*float64(combDelay[i])/float64(sampleRate)/decayTime.Milliseconds())
+		combGain[i] = math.Pow(10, -3*float64(combDelay[i])/float64(sampleRate)/(decayTime.Seconds()))
 	}
 	// All-pass filter constants
 	allPassCount := 4
@@ -200,10 +200,9 @@ func AudioFlanger(data []float64, rate float64, depth float64, feedback float64,
 }
 
 // AudioDelay adds a delay effect to the provided data with the specified delay time, feedback, and mix.
-func AudioDelay(data []float64, delayTime time.Duration, feedback float64, mix float64, sampleRate int) []float64 {
+func AudioDelay(data []float64, delayTime time.Duration, feedback, mix float64, sampleRate int) []float64 {
 	delayData := make([]float64, len(data))
-	delaySamples := int(delayTime * float64(sampleRate) / 1000)
-
+	delaySamples := int(delayTime.Seconds() * float64(sampleRate))
 	for i := 0; i < len(data); i++ {
 		if i-delaySamples >= 0 {
 			delayData[i] = data[i]*(1-mix) + (data[i-delaySamples]+delayData[i-delaySamples]*feedback)*mix
@@ -211,7 +210,6 @@ func AudioDelay(data []float64, delayTime time.Duration, feedback float64, mix f
 			delayData[i] = data[i]
 		}
 	}
-
 	return delayData
 }
 
@@ -238,7 +236,7 @@ func Normalize(data []float64, amplitude float64) []float64 {
 
 // GenerateSineWave generates a sine wave of the specified frequency, duration, and amplitude.
 func GenerateSineWave(frequency float64, duration time.Duration, amplitude float64, sampleRate int) []float64 {
-	samples := int(duration * float64(sampleRate))
+	samples := int(float64(duration) / float64(time.Second) * float64(sampleRate))
 	data := make([]float64, samples)
 	angularFrequency := 2 * math.Pi * frequency
 
@@ -251,7 +249,13 @@ func GenerateSineWave(frequency float64, duration time.Duration, amplitude float
 
 // GenerateFilteredSineWave generates a sine wave with a low-pass or high-pass filter applied.
 func GenerateFilteredSineWave(frequency float64, duration time.Duration, amplitude float64, filterType string, cutoff float64, sampleRate int) []float64 {
-	sineWave := GenerateSineWave(frequency, duration, amplitude, sampleRate)
+	numSamples := int(duration.Seconds() * float64(sampleRate))
+	sineWave := make([]float64, numSamples)
+
+	for i := 0; i < numSamples; i++ {
+		t := float64(i) / float64(sampleRate)
+		sineWave[i] = amplitude * math.Sin(2*math.Pi*frequency*t)
+	}
 
 	switch filterType {
 	case "Low-pass":
