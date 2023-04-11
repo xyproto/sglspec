@@ -81,8 +81,8 @@ func GenerateSawtoothWave(frequency float64, duration float64, amplitude float64
 }
 
 // GenerateWhiteNoise generates white noise with the given length, amplitude, and sample rate.
-func GenerateWhiteNoise(duration int, amplitude float64, sampleRate int) []float64 {
-	numSamples := int(float64(duration) * float64(sampleRate))
+func GenerateWhiteNoise(duration float64, amplitude float64, sampleRate int) []float64 {
+	numSamples := int(duration * float64(sampleRate))
 	data := make([]float64, numSamples)
 
 	for i := range data {

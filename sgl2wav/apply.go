@@ -7,6 +7,8 @@ func ApplyEnvelope(data []float64, env EnvelopeData, sampleRate int) []float64 {
 }
 
 func ApplyEffect(data []float64, effect *EffectData, sampleRate int) []float64 {
+	duration := float64(len(data)) / float64(sampleRate)
+
 	switch effect.Type {
 	case "EffectReverb":
 		return AudioReverb(data, effect.Mix, effect.Param1, sampleRate)
@@ -21,7 +23,7 @@ func ApplyEffect(data []float64, effect *EffectData, sampleRate int) []float64 {
 	case "EffectLowPass":
 		return LowPassFilter(data, effect.Param1, sampleRate)
 	case "EffectNoise":
-		noise := GenerateWhiteNoise(len(data), effect.Param1, sampleRate)
+		noise := GenerateWhiteNoise(duration, effect.Param1, sampleRate)
 		return MixAudio(data, noise, effect.Mix)
 	default:
 		return data
