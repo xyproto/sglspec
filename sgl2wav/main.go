@@ -23,23 +23,53 @@ func main() {
 		os.Exit(1)
 	}
 
-	charStream, _ := antlr.NewFileStream(*inputFilename)
+	fmt.Printf("Parsing input file: %s\n", *inputFilename)
+
+	// Create the ANTLR input stream
+	charStream, err := antlr.NewFileStream(*inputFilename)
+	if err != nil {
+		fmt.Printf("Error: %v\n", err)
+		os.Exit(1)
+	}
+
+	// Create the lexer
 	lexer := sglantlr.NewSampleGenerationLanguageLexer(charStream)
-	stream := antlr.NewCommonTokenStream(lexer, antlr.TokenDefaultChannel)
-	parser := sglantlr.NewSampleGenerationLanguageParser(stream)
+
+	// Create the token stream
+	tokenStream := antlr.NewCommonTokenStream(lexer, antlr.TokenDefaultChannel)
+
+	// Create the parser
+	parser := sglantlr.NewSampleGenerationLanguageParser(tokenStream)
+
+	// Add custom error listener
+	//var errorListener antlr.ErrorListener
+	//parser.AddErrorListener(errorListener)
+
+	// Parse the input file
+	parseTree := parser.Prog()
+
+	//if errorListener.HasErrors() {
+	//fmt.Println("Error(s) detected during parsing.")
+	//os.Exit(1)
+	//}
 
 	// Create the custom listener
 	listener := NewSGLCustomListener()
 
 	// Walk the parse tree with the custom listener
-	antlr.ParseTreeWalkerDefault.Walk(listener, parser.Prog())
+	antlr.ParseTreeWalkerDefault.Walk(listener, parseTree)
 
 	// Generate audio data
-	audioData := GenerateAudioData(listener, *sampleRate)
+	audioData, err := GenerateAudioData(listener, *sampleRate)
+	if err != nil {
+		fmt.Printf("Error: %v\n", err)
+		os.Exit(1)
+	}
+
+	fmt.Printf("Generating audio with sample rate: %d\n", *sampleRate)
 
 	// Write audio data to WAV file
-	err := WriteWAVFile(*outputFilename, audioData, *sampleRate)
-	if err != nil {
+	if err := WriteWAVFile(*outputFilename, audioData, *sampleRate); err != nil {
 		fmt.Printf("Error: %v\n", err)
 		os.Exit(1)
 	}

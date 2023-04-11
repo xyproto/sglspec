@@ -1,6 +1,9 @@
 package main
 
-import "time"
+import (
+	"fmt"
+	"time"
+)
 
 // ApplyEnvelope applies the amplitude envelope to the audio data.
 func ApplyEnvelope(data []float64, env EnvelopeData, sampleRate int) []float64 {
@@ -8,27 +11,66 @@ func ApplyEnvelope(data []float64, env EnvelopeData, sampleRate int) []float64 {
 	return ApplyAmplitudeEnvelope(data, env.AttackTime, env.DecayTime, env.SustainLevel, env.ReleaseTime, sampleRate)
 }
 
-func ApplyEffect(data []float64, effect *EffectData, sampleRate int) []float64 {
+func ApplyEffect(data []float64, effect *EffectData, sampleRate int) ([]float64, error) {
 	var duration time.Duration = time.Duration(float64(len(data)) / float64(sampleRate) * float64(time.Second))
-
 	switch effect.Type {
 	case "EffectReverb":
-		return AudioReverb(data, effect.Mix, effect.Param1.(time.Duration), sampleRate)
+		param, ok := effect.Param1.(time.Duration)
+		if !ok {
+			return nil, fmt.Errorf("effect param1 is not a duration")
+		}
+		return AudioReverb(data, effect.Mix, param, sampleRate), nil
 	case "EffectDelay":
-		return AudioDelay(data, effect.Param1.(time.Duration), effect.Param2.(float64), effect.Mix, sampleRate)
+		param1, ok1 := effect.Param1.(time.Duration)
+		param2, ok2 := effect.Param2.(float64)
+		if !ok1 {
+			return nil, fmt.Errorf("effect param1 is not a duration")
+		}
+		if !ok2 {
+			return nil, fmt.Errorf("effect param2 is not a float64")
+		}
+		return AudioDelay(data, param1, param2, effect.Mix, sampleRate), nil
 	case "EffectChorus":
-		return AudioChorus(data, effect.Param1.(float64), effect.Param2.(float64), effect.Mix, sampleRate)
+		param1, ok1 := effect.Param1.(float64)
+		param2, ok2 := effect.Param2.(float64)
+		if !ok1 {
+			return nil, fmt.Errorf("effect param1 is not a float64")
+		}
+		if !ok2 {
+			return nil, fmt.Errorf("effect param2 is not a float64")
+		}
+		return AudioChorus(data, param1, param2, effect.Mix, sampleRate), nil
 	case "EffectDistortion":
-		return AudioDistortion(data, effect.Param1.(float64), effect.Param2.(float64), effect.Mix)
+		param1, ok1 := effect.Param1.(float64)
+		param2, ok2 := effect.Param2.(float64)
+		if !ok1 {
+			return nil, fmt.Errorf("effect param1 is not a float64")
+		}
+		if !ok2 {
+			return nil, fmt.Errorf("effect param2 is not a float64")
+		}
+		return AudioDistortion(data, param1, param2, effect.Mix), nil
 	case "EffectHighPass":
-		return HighPassFilter(data, effect.Param1.(float64), sampleRate)
+		param1, ok1 := effect.Param1.(float64)
+		if !ok1 {
+			return nil, fmt.Errorf("effect param1 is not a float64")
+		}
+		return HighPassFilter(data, param1, sampleRate), nil
 	case "EffectLowPass":
-		return LowPassFilter(data, effect.Param1.(float64), sampleRate)
+		param1, ok1 := effect.Param1.(float64)
+		if !ok1 {
+			return nil, fmt.Errorf("effect param1 is not a float64")
+		}
+		return LowPassFilter(data, param1, sampleRate), nil
 	case "EffectNoise":
-		noise := GenerateWhiteNoise(duration, effect.Param1.(float64), sampleRate)
-		return MixAudio(data, noise, effect.Mix)
+		param1, ok1 := effect.Param1.(float64)
+		if !ok1 {
+			return nil, fmt.Errorf("effect param1 is not a float64")
+		}
+		noise := GenerateWhiteNoise(duration, param1, sampleRate)
+		return MixAudio(data, noise, effect.Mix), nil
 	default:
-		return data
+		return data, nil
 	}
 }
 

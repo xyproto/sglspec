@@ -27,7 +27,10 @@ func TestGenerateAudioData(t *testing.T) {
 	}
 	// Generate audio data
 	sampleRate := 44100
-	audioData := GenerateAudioData(listener, sampleRate)
+	audioData, err := GenerateAudioData(listener, sampleRate)
+	if err != nil {
+		t.Errorf("error: %v", err)
+	}
 
 	// Check that audio data has been generated and is not all zeroes
 	hasData := false

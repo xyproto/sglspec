@@ -132,7 +132,7 @@ type Formant struct {
 	Gain       float64
 }
 
-func GenerateAudioData(listener *SGLCustomListener, sampleRate int) []float64 {
+func GenerateAudioData(listener *SGLCustomListener, sampleRate int) ([]float64, error) {
 	// Placeholder for the generated audio data
 	audioData := make([]float64, sampleRate)
 
@@ -148,11 +148,15 @@ func GenerateAudioData(listener *SGLCustomListener, sampleRate int) []float64 {
 	}
 
 	// Process effects
+	var err error
 	for _, eff := range listener.effects {
-		audioData = ApplyEffect(audioData, &eff, sampleRate)
+		audioData, err = ApplyEffect(audioData, &eff, sampleRate)
+		if err != nil {
+			return []float64{}, err
+		}
 	}
 
-	return audioData
+	return audioData, nil
 }
 
 func GenerateOscillatorData(osc *OscillatorData, sampleRate int) []float64 {

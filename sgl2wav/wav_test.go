@@ -1,7 +1,6 @@
 package main
 
 import (
-	"io/ioutil"
 	"os"
 	"testing"
 	"time"
@@ -24,7 +23,7 @@ func TestWriteWAVFile(t *testing.T) {
 	defer os.Remove(filename)
 
 	// Read WAV file
-	data, err := ioutil.ReadFile(filename)
+	data, err := os.ReadFile(filename)
 	if err != nil {
 		t.Fatal(err)
 	}
