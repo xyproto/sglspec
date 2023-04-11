@@ -41,17 +41,8 @@ func main() {
 	// Create the parser
 	parser := sglantlr.NewSampleGenerationLanguageParser(tokenStream)
 
-	// Add custom error listener
-	//var errorListener antlr.ErrorListener
-	//parser.AddErrorListener(errorListener)
-
 	// Parse the input file
 	parseTree := parser.Prog()
-
-	//if errorListener.HasErrors() {
-	//fmt.Println("Error(s) detected during parsing.")
-	//os.Exit(1)
-	//}
 
 	// Create the custom listener
 	listener := NewSGLCustomListener()
