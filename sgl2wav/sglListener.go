@@ -2,14 +2,15 @@ package main
 
 import (
 	"strconv"
+	"strings"
+	"time"
 
-	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
-	sglantlr "github.com/xyproto/sglspec/antlr"
+	parser "github.com/xyproto/sglspec/antlr"
 )
 
 // SGLCustomListener is a custom listener for the Sample Generation Language (SGL) that
 type SGLCustomListener struct {
-	sglantlr.BaseSampleGenerationLanguageListener
+	parser.BaseSampleGenerationLanguageListener
 	oscillators         []OscillatorData
 	envelopes           []EnvelopeData
 	effects             []EffectData
@@ -28,7 +29,7 @@ func NewSGLCustomListener() *SGLCustomListener {
 }
 
 // EnterOscillator is called when an Oscillator rule is entered in the SGL grammar.
-func (l *SGLCustomListener) EnterOscillator(ctx *sglantlr.OscillatorContext) {
+func (l *SGLCustomListener) EnterOscillator(ctx *parser.OscillatorContext) {
 	oscillator := OscillatorData{
 		Waveform:  ctx.Waveform().GetText(),
 		Frequency: parseFloat(ctx.Frequency().GetText()),
@@ -38,11 +39,11 @@ func (l *SGLCustomListener) EnterOscillator(ctx *sglantlr.OscillatorContext) {
 }
 
 // EnterEnvelope is called when an Envelope rule is entered in the SGL grammar.
-func (l *SGLCustomListener) EnterEnvelope(ctx *sglantlr.EnvelopeContext) {
-	attackTime := parseFloat(ctx.GetChild(1).(*antlr.TerminalNodeImpl).GetText())
-	decayTime := parseFloat(ctx.GetChild(3).(*antlr.TerminalNodeImpl).GetText())
-	sustainLevel := parseFloat(ctx.GetChild(5).(*antlr.TerminalNodeImpl).GetText())
-	releaseTime := parseFloat(ctx.GetChild(7).(*antlr.TerminalNodeImpl).GetText())
+func (l *SGLCustomListener) EnterEnvelope(ctx *parser.EnvelopeContext) {
+	attackTime := parseDuration(ctx.AttackTime().GetText())
+	decayTime := parseDuration(ctx.DecayTime().GetText())
+	sustainLevel := parseFloat(ctx.SustainLevel().GetText())
+	releaseTime := parseDuration(ctx.ReleaseTime().GetText())
 
 	l.envelopes = append(l.envelopes, EnvelopeData{
 		AttackTime:   attackTime,
@@ -50,6 +51,26 @@ func (l *SGLCustomListener) EnterEnvelope(ctx *sglantlr.EnvelopeContext) {
 		SustainLevel: sustainLevel,
 		ReleaseTime:  releaseTime,
 	})
+}
+
+// Helper function to parse time.Duration from strings
+func parseDuration(s string) time.Duration {
+	// Check if "ms" is present
+	if strings.HasSuffix(s, "ms") {
+		s = strings.TrimSuffix(s, "ms")
+		ms, err := strconv.ParseInt(s, 10, 64)
+		if err != nil {
+			panic(err)
+		}
+		return time.Duration(ms) * time.Millisecond
+	}
+
+	// If no unit is specified, treat it as milliseconds by default
+	ms, err := strconv.ParseInt(s, 10, 64)
+	if err != nil {
+		panic(err)
+	}
+	return time.Duration(ms) * time.Millisecond
 }
 
 // Helper function to parse floats from strings

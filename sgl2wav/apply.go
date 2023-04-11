@@ -1,5 +1,7 @@
 package main
 
+import "time"
+
 // ApplyEnvelope applies the amplitude envelope to the audio data.
 func ApplyEnvelope(data []float64, env EnvelopeData, sampleRate int) []float64 {
 	// Call the ApplyAmplitudeEnvelope function with the envelope data
@@ -7,30 +9,30 @@ func ApplyEnvelope(data []float64, env EnvelopeData, sampleRate int) []float64 {
 }
 
 func ApplyEffect(data []float64, effect *EffectData, sampleRate int) []float64 {
-	duration := float64(len(data)) / float64(sampleRate)
+	var duration time.Duration = time.Duration(float64(len(data)) / float64(sampleRate) * float64(time.Second))
 
 	switch effect.Type {
 	case "EffectReverb":
-		return AudioReverb(data, effect.Mix, effect.Param1, sampleRate)
+		return AudioReverb(data, effect.Mix, effect.Param1.(time.Duration), sampleRate)
 	case "EffectDelay":
-		return AudioDelay(data, effect.Param1, effect.Param2, effect.Mix, sampleRate)
+		return AudioDelay(data, effect.Param1.(time.Duration), effect.Param2.(float64), effect.Mix, sampleRate)
 	case "EffectChorus":
-		return AudioChorus(data, effect.Param1, effect.Param2, effect.Mix, sampleRate)
+		return AudioChorus(data, effect.Param1.(float64), effect.Param2.(float64), effect.Mix, sampleRate)
 	case "EffectDistortion":
-		return AudioDistortion(data, effect.Param1, effect.Param2, effect.Mix)
+		return AudioDistortion(data, effect.Param1.(float64), effect.Param2.(float64), effect.Mix)
 	case "EffectHighPass":
-		return HighPassFilter(data, effect.Param1, sampleRate)
+		return HighPassFilter(data, effect.Param1.(float64), sampleRate)
 	case "EffectLowPass":
-		return LowPassFilter(data, effect.Param1, sampleRate)
+		return LowPassFilter(data, effect.Param1.(float64), sampleRate)
 	case "EffectNoise":
-		noise := GenerateWhiteNoise(duration, effect.Param1, sampleRate)
+		noise := GenerateWhiteNoise(duration, effect.Param1.(float64), sampleRate)
 		return MixAudio(data, noise, effect.Mix)
 	default:
 		return data
 	}
 }
 
-func GenerateSquareWave(frequency float64, duration float64, amplitude float64, sampleRate int) []float64 {
+func GenerateSquareWave(frequency float64, duration time.Duration, amplitude float64, sampleRate int) []float64 {
 	return GenerateOscillator("square", frequency, duration, sampleRate)
 }
 

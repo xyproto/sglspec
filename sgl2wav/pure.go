@@ -2,11 +2,12 @@ package main
 
 import (
 	"math"
+	"time"
 )
 
 // GenerateOscillator generates an oscillator with the specified waveform, frequency, duration, and sample rate.
-func GenerateOscillator(waveform string, frequency float64, duration float64, sampleRate int) []float64 {
-	samples := int(duration * float64(sampleRate))
+func GenerateOscillator(waveform string, frequency float64, duration time.Duration, sampleRate int) []float64 {
+	samples := int(float64(duration) / float64(time.Second) * float64(sampleRate))
 	data := make([]float64, samples)
 
 	switch waveform {
@@ -34,10 +35,10 @@ func GenerateOscillator(waveform string, frequency float64, duration float64, sa
 }
 
 // ApplyAmplitudeEnvelope applies an amplitude envelope to the provided data.
-func ApplyAmplitudeEnvelope(data []float64, attackTime float64, decayTime float64, sustainLevel float64, releaseTime float64, sampleRate int) []float64 {
-	attackSamples := int(attackTime * float64(sampleRate))
-	decaySamples := int(decayTime * float64(sampleRate))
-	releaseSamples := int(releaseTime * float64(sampleRate))
+func ApplyAmplitudeEnvelope(data []float64, attackTime, decayTime time.Duration, sustainLevel float64, releaseTime time.Duration, sampleRate int) []float64 {
+	attackSamples := int(float64(attackTime) / float64(time.Second) * float64(sampleRate))
+	decaySamples := int(float64(decayTime) / float64(time.Second) * float64(sampleRate))
+	releaseSamples := int(float64(releaseTime) / float64(time.Second) * float64(sampleRate))
 
 	// Apply attack
 	for i := 0; i < attackSamples; i++ {
@@ -99,20 +100,18 @@ func AudioDistortion(data []float64, drive float64, tone float64, mix float64) [
 }
 
 // AudioReverb applies reverb effect to the provided data.
-func AudioReverb(data []float64, mix float64, decayTime float64, sampleRate int) []float64 {
+func AudioReverb(data []float64, mix float64, decayTime time.Duration, sampleRate int) []float64 {
 	// Comb filter constants
 	combCount := 8
 	combDelay := []int{1617, 1557, 1491, 1422, 1277, 1116, 897, 778}
 	combGain := make([]float64, combCount)
 	for i := 0; i < combCount; i++ {
-		combGain[i] = math.Pow(10, -3*float64(combDelay[i])/float64(sampleRate)/decayTime)
+		combGain[i] = math.Pow(10, -3*float64(combDelay[i])/float64(sampleRate)/decayTime.Milliseconds())
 	}
-
 	// All-pass filter constants
 	allPassCount := 4
 	allPassDelay := []int{225, 556, 441, 341}
 	allPassGain := 0.5
-
 	// Apply comb filters
 	combData := make([][]float64, combCount)
 	for i := 0; i < combCount; i++ {
@@ -121,7 +120,6 @@ func AudioReverb(data []float64, mix float64, decayTime float64, sampleRate int)
 			combData[i][j+combDelay[i]] = data[j] + combGain[i]*combData[i][j]
 		}
 	}
-
 	// Mix comb filters
 	mixedData := make([]float64, len(data))
 	for i := 0; i < len(data); i++ {
@@ -129,7 +127,6 @@ func AudioReverb(data []float64, mix float64, decayTime float64, sampleRate int)
 			mixedData[i] += combData[j][i+combDelay[j]]
 		}
 	}
-
 	// Apply all-pass filters
 	allPassData := make([][]float64, allPassCount)
 	for i := 0; i < allPassCount; i++ {
@@ -139,12 +136,10 @@ func AudioReverb(data []float64, mix float64, decayTime float64, sampleRate int)
 			mixedData[j] = allPassData[i][j] - allPassGain*mixedData[j]
 		}
 	}
-
 	// Apply mix
 	for i := 0; i < len(data); i++ {
 		data[i] = (1-mix)*data[i] + mix*mixedData[i]
 	}
-
 	return data
 }
 
@@ -205,7 +200,7 @@ func AudioFlanger(data []float64, rate float64, depth float64, feedback float64,
 }
 
 // AudioDelay adds a delay effect to the provided data with the specified delay time, feedback, and mix.
-func AudioDelay(data []float64, delayTime float64, feedback float64, mix float64, sampleRate int) []float64 {
+func AudioDelay(data []float64, delayTime time.Duration, feedback float64, mix float64, sampleRate int) []float64 {
 	delayData := make([]float64, len(data))
 	delaySamples := int(delayTime * float64(sampleRate) / 1000)
 
@@ -242,7 +237,7 @@ func Normalize(data []float64, amplitude float64) []float64 {
 }
 
 // GenerateSineWave generates a sine wave of the specified frequency, duration, and amplitude.
-func GenerateSineWave(frequency float64, duration float64, amplitude float64, sampleRate int) []float64 {
+func GenerateSineWave(frequency float64, duration time.Duration, amplitude float64, sampleRate int) []float64 {
 	samples := int(duration * float64(sampleRate))
 	data := make([]float64, samples)
 	angularFrequency := 2 * math.Pi * frequency
@@ -255,7 +250,7 @@ func GenerateSineWave(frequency float64, duration float64, amplitude float64, sa
 }
 
 // GenerateFilteredSineWave generates a sine wave with a low-pass or high-pass filter applied.
-func GenerateFilteredSineWave(frequency float64, duration float64, amplitude float64, filterType string, cutoff float64, sampleRate int) []float64 {
+func GenerateFilteredSineWave(frequency float64, duration time.Duration, amplitude float64, filterType string, cutoff float64, sampleRate int) []float64 {
 	sineWave := GenerateSineWave(frequency, duration, amplitude, sampleRate)
 
 	switch filterType {
@@ -269,7 +264,7 @@ func GenerateFilteredSineWave(frequency float64, duration float64, amplitude flo
 }
 
 // GenerateDistortedSineWave generates a sine wave with a distortion effect applied.
-func GenerateDistortedSineWave(frequency float64, duration float64, amplitude float64, drive float64, tone float64, mix float64, sampleRate int) []float64 {
+func GenerateDistortedSineWave(frequency float64, duration time.Duration, amplitude float64, drive float64, tone float64, mix float64, sampleRate int) []float64 {
 	sineWave := GenerateSineWave(frequency, duration, amplitude, sampleRate)
 	distortedSineWave := make([]float64, len(sineWave))
 

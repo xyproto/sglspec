@@ -1,27 +1,29 @@
 package main
 
+import "time"
+
 type OscillatorData struct {
 	Waveform   string
 	Frequency  float64
 	Amplitude  float64
 	PhaseShift float64
-	Duration float64
+	Duration   time.Duration
 	Mix        float64
 }
 
 type EnvelopeData struct {
-	AttackTime   float64
-	DecayTime    float64
+	AttackTime   time.Duration
+	DecayTime    time.Duration
 	SustainLevel float64
-	ReleaseTime  float64
+	ReleaseTime  time.Duration
 }
 
 type EffectData struct {
 	Type   string
 	Params []float64
 	Mix    float64
-	Param1 float64
-	Param2 float64
+	Param1 interface{}
+	Param2 interface{}
 }
 
 type FMSynthData struct {
@@ -52,7 +54,7 @@ func NewOscillatorData(waveform string, frequency float64, amplitude float64, ph
 	}
 }
 
-func NewEnvelopeData(attackTime float64, decayTime float64, sustainLevel float64, releaseTime float64) *EnvelopeData {
+func NewEnvelopeData(attackTime, decayTime time.Duration, sustainLevel float64, releaseTime time.Duration) *EnvelopeData {
 	return &EnvelopeData{
 		AttackTime:   attackTime,
 		DecayTime:    decayTime,
@@ -68,7 +70,7 @@ func NewEffectData(effectType string, params []float64) *EffectData {
 	}
 }
 
-func NewFMSynthData(carrier OscillatorData, modulator OscillatorData, modIndex float64, amplitude float64, envelope EnvelopeData) *FMSynthData {
+func NewFMSynthData(carrier, modulator OscillatorData, modIndex, amplitude float64, envelope EnvelopeData) *FMSynthData {
 	return &FMSynthData{
 		Carrier:   carrier,
 		Modulator: modulator,

@@ -3,10 +3,11 @@ package main
 import (
 	"math"
 	"math/rand"
+	"time"
 )
 
 type PinkNoise struct {
-	amplitude float64
+	amplitude     float64
 	values        []float64
 	probabilities []float64
 }
@@ -43,8 +44,8 @@ func (pn *PinkNoise) Next() float64 {
 
 type BrownianNoise struct {
 	amplitude float64
-	value float64
-	stepSize float64
+	value     float64
+	stepSize  float64
 }
 
 func NewBrownianNoise(amplitude float64) *BrownianNoise {
@@ -68,52 +69,44 @@ func (bn *BrownianNoise) Next() float64 {
 	return bn.amplitude * bn.value
 }
 
-func GenerateSawtoothWave(frequency float64, duration float64, amplitude float64, sampleRate int) []float64 {
-	numSamples := int(duration * float64(sampleRate))
+func GenerateSawtoothWave(frequency float64, duration time.Duration, amplitude float64, sampleRate int) []float64 {
+	numSamples := int(float64(duration) / float64(time.Second) * float64(sampleRate))
 	data := make([]float64, numSamples)
 	period := float64(sampleRate) / frequency
-
 	for i := range data {
 		data[i] = amplitude * (2 * (float64(i)/period - math.Floor(0.5+float64(i)/period)))
 	}
-
 	return data
 }
 
 // GenerateWhiteNoise generates white noise with the given length, amplitude, and sample rate.
-func GenerateWhiteNoise(duration float64, amplitude float64, sampleRate int) []float64 {
-	numSamples := int(duration * float64(sampleRate))
+func GenerateWhiteNoise(duration time.Duration, amplitude float64, sampleRate int) []float64 {
+	numSamples := int(float64(duration) / float64(time.Second) * float64(sampleRate))
 	data := make([]float64, numSamples)
-
 	for i := range data {
 		data[i] = amplitude * (rand.Float64()*2 - 1)
 	}
-
 	return data
 }
 
 // GeneratePinkNoise generates pink noise with the given duration, amplitude, and sample rate.
-func GeneratePinkNoise(duration float64, amplitude float64, sampleRate int) []float64 {
-	numSamples := int(duration * float64(sampleRate))
+func GeneratePinkNoise(duration time.Duration, amplitude float64, sampleRate int) []float64 {
+	numSamples := int(float64(duration) / float64(time.Second) * float64(sampleRate))
 	data := make([]float64, numSamples)
-
 	pink := NewPinkNoise(amplitude)
 	for i := range data {
 		data[i] = pink.Next()
 	}
-
 	return data
 }
 
 // GenerateBrownianNoise generates brownian noise with the given duration, amplitude, and sample rate.
-func GenerateBrownianNoise(duration float64, amplitude float64, sampleRate int) []float64 {
-	numSamples := int(duration * float64(sampleRate))
+func GenerateBrownianNoise(duration time.Duration, amplitude float64, sampleRate int) []float64 {
+	numSamples := int(float64(duration) / float64(time.Second) * float64(sampleRate))
 	data := make([]float64, numSamples)
-
 	brown := NewBrownianNoise(amplitude)
 	for i := range data {
 		data[i] = brown.Next()
 	}
-
 	return data
 }

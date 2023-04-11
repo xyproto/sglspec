@@ -1,5 +1,7 @@
 package main
 
+import "time"
+
 type SGLData struct {
 	Oscillators    []OscillatorData
 	Envelopes      []EnvelopeData
@@ -64,10 +66,10 @@ type Oscillator struct {
 
 type Envelope struct {
 	Type         int
-	AttackTime   float64
-	DecayTime    float64
+	AttackTime   time.Duration
+	DecayTime    time.Duration
 	SustainLevel float64
-	ReleaseTime  float64
+	ReleaseTime  time.Duration
 }
 
 type Effect struct {
@@ -172,7 +174,7 @@ func GenerateOscillatorData(osc *OscillatorData, sampleRate int) []float64 {
 	return oscData
 }
 
-func GenerateNoise(noiseType string, duration float64, amplitude float64, sampleRate int) []float64 {
+func GenerateNoise(noiseType string, duration time.Duration, amplitude, sampleRate int) []float64 {
 	switch noiseType {
 	case "white":
 		return GenerateWhiteNoise(duration, amplitude, sampleRate)
