@@ -83,8 +83,8 @@ func HighPassFilter(data []float64, cutoff float64, sampleRate int) []float64 {
 	return filteredData
 }
 
-// Distortion applies distortion effect to the provided data.
-func Distortion(data []float64, drive float64, tone float64, mix float64) []float64 {
+// AudioDistortion applies distortion effect to the provided data.
+func AudioDistortion(data []float64, drive float64, tone float64, mix float64) []float64 {
 	distortedData := make([]float64, len(data))
 
 	for i := 0; i < len(data); i++ {
@@ -98,8 +98,8 @@ func Distortion(data []float64, drive float64, tone float64, mix float64) []floa
 	return distortedData
 }
 
-// Reverb applies reverb effect to the provided data.
-func Reverb(data []float64, mix float64, decayTime float64, sampleRate int) []float64 {
+// AudioReverb applies reverb effect to the provided data.
+func AudioReverb(data []float64, mix float64, decayTime float64, sampleRate int) []float64 {
 	// Comb filter constants
 	combCount := 8
 	combDelay := []int{1617, 1557, 1491, 1422, 1277, 1116, 897, 778}
@@ -155,8 +155,8 @@ func BandPassFilter(data []float64, lowCutoff float64, highCutoff float64, sampl
 	return bandPassedData
 }
 
-// Chorus adds a chorus effect to the provided data with the specified rate, depth, and mix.
-func Chorus(data []float64, rate float64, depth float64, mix float64, sampleRate int) []float64 {
+// AudioChorus adds a chorus effect to the provided data with the specified rate, depth, and mix.
+func AudioChorus(data []float64, rate float64, depth float64, mix float64, sampleRate int) []float64 {
 	// This is a simple implementation of a chorus effect. You may need to adjust the parameters for your specific use case.
 	chData := make([]float64, len(data))
 	for i := 0; i < len(data); i++ {
@@ -170,8 +170,8 @@ func Chorus(data []float64, rate float64, depth float64, mix float64, sampleRate
 	return chData
 }
 
-// Phaser adds a phaser effect to the provided data with the specified rate, depth, feedback, and mix.
-func Phaser(data []float64, rate float64, depth float64, feedback float64, mix float64, sampleRate int) []float64 {
+// AudioPhaser adds a phaser effect to the provided data with the specified rate, depth, feedback, and mix.
+func AudioPhaser(data []float64, rate float64, depth float64, feedback float64, mix float64, sampleRate int) []float64 {
 	// This is a simple implementation of a phaser effect. You may need to adjust the parameters for your specific use case.
 	phData := make([]float64, len(data))
 	feedbackData := make([]float64, len(data))
@@ -187,8 +187,8 @@ func Phaser(data []float64, rate float64, depth float64, feedback float64, mix f
 	return phData
 }
 
-// Flanger adds a flanger effect to the provided data with the specified rate, depth, feedback, and mix.
-func Flanger(data []float64, rate float64, depth float64, feedback float64, mix float64, sampleRate int) []float64 {
+// AudioFlanger adds a flanger effect to the provided data with the specified rate, depth, feedback, and mix.
+func AudioFlanger(data []float64, rate float64, depth float64, feedback float64, mix float64, sampleRate int) []float64 {
 	// This is a simple implementation of a flanger effect. You may need to adjust the parameters for your specific use case.
 	flData := make([]float64, len(data))
 	feedbackData := make([]float64, len(data))
@@ -204,8 +204,8 @@ func Flanger(data []float64, rate float64, depth float64, feedback float64, mix 
 	return flData
 }
 
-// Delay adds a delay effect to the provided data with the specified delay time, feedback, and mix.
-func Delay(data []float64, delayTime float64, feedback float64, mix float64, sampleRate int) []float64 {
+// AudioDelay adds a delay effect to the provided data with the specified delay time, feedback, and mix.
+func AudioDelay(data []float64, delayTime float64, feedback float64, mix float64, sampleRate int) []float64 {
 	delayData := make([]float64, len(data))
 	delaySamples := int(delayTime * float64(sampleRate) / 1000)
 
@@ -239,4 +239,56 @@ func Normalize(data []float64, amplitude float64) []float64 {
 	}
 
 	return normalizedData
+}
+
+// GenerateSineWave generates a sine wave of the specified frequency, duration, and amplitude.
+func GenerateSineWave(frequency float64, duration float64, amplitude float64, sampleRate int) []float64 {
+	samples := int(duration * float64(sampleRate))
+	data := make([]float64, samples)
+	angularFrequency := 2 * math.Pi * frequency
+
+	for i := 0; i < samples; i++ {
+		data[i] = amplitude * math.Sin(angularFrequency*float64(i)/float64(sampleRate))
+	}
+
+	return data
+}
+
+// GenerateFilteredSineWave generates a sine wave with a low-pass or high-pass filter applied.
+func GenerateFilteredSineWave(frequency float64, duration float64, amplitude float64, filterType string, cutoff float64, sampleRate int) []float64 {
+	sineWave := GenerateSineWave(frequency, duration, amplitude, sampleRate)
+
+	switch filterType {
+	case "Low-pass":
+		return LowPassFilter(sineWave, cutoff, sampleRate)
+	case "High-pass":
+		return HighPassFilter(sineWave, cutoff, sampleRate)
+	default:
+		return sineWave
+	}
+}
+
+// GenerateDistortedSineWave generates a sine wave with a distortion effect applied.
+func GenerateDistortedSineWave(frequency float64, duration float64, amplitude float64, drive float64, tone float64, mix float64, sampleRate int) []float64 {
+	sineWave := GenerateSineWave(frequency, duration, amplitude, sampleRate)
+	distortedSineWave := make([]float64, len(sineWave))
+
+	for i, sample := range sineWave {
+		distortedSineWave[i] = math.Tanh(sample*drive) * amplitude
+	}
+
+	toneFilteredWave := LowPassFilter(distortedSineWave, tone, sampleRate)
+
+	return MixAudio(sineWave, toneFilteredWave, mix)
+}
+
+// MixAudio mixes two signals with the specified mix ratio.
+func MixAudio(signal1, signal2 []float64, mix float64) []float64 {
+	mixedSignal := make([]float64, len(signal1))
+
+	for i := 0; i < len(signal1); i++ {
+		mixedSignal[i] = signal1[i]*(1-mix) + signal2[i]*mix
+	}
+
+	return mixedSignal
 }
