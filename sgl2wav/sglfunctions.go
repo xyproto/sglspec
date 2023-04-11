@@ -156,8 +156,8 @@ func GenerateAudioData(listener *SGLCustomListener, sampleRate int) []float64 {
 }
 
 func GenerateOscillatorData(osc *OscillatorData, sampleRate int) []float64 {
-	oscData := make([]float64, sampleRate)
-	duration := float64(sampleRate) / osc.Frequency
+    oscData := make([]float64, sampleRate)
+    duration := time.Duration(float64(sampleRate) / osc.Frequency * float64(time.Second))
 
 	switch osc.Waveform {
 	case "sine":
@@ -166,23 +166,23 @@ func GenerateOscillatorData(osc *OscillatorData, sampleRate int) []float64 {
 		oscData = GenerateSawtoothWave(osc.Frequency, duration, 1, sampleRate)
 	case "square":
 		oscData = GenerateSquareWave(osc.Frequency, duration, 1, sampleRate)
-	case "riangle":
+	case "triangle":
 		oscData = GenerateTriangleWave(osc.Frequency, duration, 1, sampleRate)
 	case "noise":
-		oscData = GenerateNoise(osc.Waveform, duration, osc.Amplitude, sampleRate)
+		oscData = GenerateNoise(osc.Waveform, duration, int(osc.Amplitude), sampleRate)
 	}
 	return oscData
 }
 
 func GenerateNoise(noiseType string, duration time.Duration, amplitude, sampleRate int) []float64 {
-	switch noiseType {
-	case "white":
-		return GenerateWhiteNoise(duration, amplitude, sampleRate)
-	case "pink":
-		return GeneratePinkNoise(duration, amplitude, sampleRate)
-	case "brownian":
-		return GenerateBrownianNoise(duration, amplitude, sampleRate)
-	default:
-		panic("Unknown noise type: " + noiseType)
-	}
+    switch noiseType {
+    case "white":
+        return GenerateWhiteNoise(duration, float64(amplitude), sampleRate)
+    case "pink":
+        return GeneratePinkNoise(duration, float64(amplitude), sampleRate)
+    case "brownian":
+        return GenerateBrownianNoise(duration, float64(amplitude), sampleRate)
+    default:
+        panic("Unknown noise type: " + noiseType)
+    }
 }

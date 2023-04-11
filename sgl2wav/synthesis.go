@@ -1,9 +1,12 @@
 package main
 
-import "math"
+import (
+	"math"
+	"time"
+)
 
-func GeneratePulseWave(frequency float64, duration float64, amplitude float64, pulseWidth float64, sampleRate int) []float64 {
-	numSamples := int(duration * float64(sampleRate))
+func GeneratePulseWave(frequency float64, duration time.Duration, amplitude, pulseWidth float64, sampleRate int) []float64 {
+	numSamples := int(float64(duration) * float64(sampleRate) / float64(time.Second))
 	samples := make([]float64, numSamples)
 	pulseWidthRatio := pulseWidth / 100.0
 
@@ -20,8 +23,8 @@ func GeneratePulseWave(frequency float64, duration float64, amplitude float64, p
 	return samples
 }
 
-func GenerateModulatedSineWave(frequency float64, duration float64, amplitude float64, modulationFrequency float64, modulationAmplitude float64, sampleRate int) []float64 {
-	numSamples := int(duration * float64(sampleRate))
+func GenerateModulatedSineWave(frequency float64, duration time.Duration, amplitude, modulationFrequency, modulationAmplitude float64, sampleRate int) []float64 {
+	numSamples := int(float64(duration) * float64(sampleRate) / float64(time.Second))
 	samples := make([]float64, numSamples)
 
 	for i := 0; i < numSamples; i++ {
@@ -33,8 +36,8 @@ func GenerateModulatedSineWave(frequency float64, duration float64, amplitude fl
 	return samples
 }
 
-func GenerateTriangleWave(frequency float64, duration float64, amplitude float64, sampleRate int) []float64 {
-	numSamples := int(duration * float64(sampleRate))
+func GenerateTriangleWave(frequency float64, duration time.Duration, amplitude float64, sampleRate int) []float64 {
+	numSamples := int(float64(duration) * float64(sampleRate) / float64(time.Second))
 	samples := make([]float64, numSamples)
 
 	for i := 0; i < numSamples; i++ {
