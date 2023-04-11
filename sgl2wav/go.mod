@@ -6,7 +6,7 @@ require (
 	github.com/antlr/antlr4/runtime/Go/antlr/v4 v4.0.0-20230321174746-8dcc6526cfb1
 	github.com/go-audio/audio v1.0.0
 	github.com/go-audio/wav v1.1.0
-	github.com/xyproto/sglspec v0.0.0-20230411210440-30eb7a480493
+	github.com/xyproto/sglspec v0.0.0-20230411212923-fb7391a30a66
 )
 
 require (
