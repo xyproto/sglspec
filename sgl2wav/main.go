@@ -6,7 +6,7 @@ import (
 	"os"
 
 	"github.com/antlr/antlr4/runtime/Go/antlr/v4"
-	sglantlr "github.com/xyproto/sglspec/antlr"
+	"github.com/xyproto/sglspec/parser"
 )
 
 func main() {
@@ -33,16 +33,16 @@ func main() {
 	}
 
 	// Create the lexer
-	lexer := sglantlr.NewSampleGenerationLanguageLexer(charStream)
+	lexer := parser.NewSampleGenerationLanguageLexer(charStream)
 
 	// Create the token stream
 	tokenStream := antlr.NewCommonTokenStream(lexer, antlr.TokenDefaultChannel)
 
 	// Create the parser
-	parser := sglantlr.NewSampleGenerationLanguageParser(tokenStream)
+	languageParser := parser.NewSampleGenerationLanguageParser(tokenStream)
 
 	// Parse the input file
-	parseTree := parser.Prog()
+	parseTree := languageParser.Prog()
 
 	// Create the custom listener
 	listener := NewSGLCustomListener()

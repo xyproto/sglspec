@@ -1,4 +1,4 @@
-// Code generated from antlr/SampleGenerationLanguage.g4 by ANTLR 4.12.0. DO NOT EDIT.
+// Code generated from SampleGenerationLanguage.g4 by ANTLR 4.12.0. DO NOT EDIT.
 
 package parser
 

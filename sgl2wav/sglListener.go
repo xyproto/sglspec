@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	parser "github.com/xyproto/sglspec/antlr"
+	parser "github.com/xyproto/sglspec/parser"
 )
 
 // SGLCustomListener is a custom listener for the Sample Generation Language (SGL) that
