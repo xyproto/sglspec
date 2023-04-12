@@ -1,4 +1,4 @@
-// Code generated from java-escape by ANTLR 4.11.1. DO NOT EDIT.
+// Code generated from antlr/SampleGenerationLanguage.g4 by ANTLR 4.12.0. DO NOT EDIT.
 
 package parser // SampleGenerationLanguage
 
@@ -40,7 +40,7 @@ func samplegenerationlanguageParserInit() {
 		"'Amplitude:'", "'Phase:'", "'Wavetable:'", "'Waveform:'", "'Index:'",
 		"'Subtractive:'", "'Filter:'", "'Cutoff:'", "'Resonance:'", "'KarplusStrong:'",
 		"'Formant:'", "'Bandwidth:'", "'Gain:'", "'Sine'", "'Square'", "'Triangle'",
-		"'Sawtooth'", "'Noise'", "'Hz'", "'Amplitude'", "'Filter'", "'ms'",
+		"'Sawtooth'", "'Noise'", "'Hz'", "'Amplitude'", "'Filter'", "'s'", "'ms'",
 		"'Reverb'", "'Delay'", "'Chorus'", "'Distortion'", "'High-pass'", "'Low-pass'",
 		"'Time:'", "'Feedback:'", "'Rate:'", "'Depth:'", "'Drive:'", "'Tone:'",
 		"'Carrier'", "'Modulator'", "'%'", "'Hanning'", "'Hamming'", "'Blackman'",
@@ -53,7 +53,7 @@ func samplegenerationlanguageParserInit() {
 		"", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
 		"", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
 		"", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
-		"", "", "", "", "", "COMMA", "NUMBER", "WS",
+		"", "", "", "", "", "", "COMMA", "NUMBER", "WS",
 	}
 	staticData.ruleNames = []string{
 		"prog", "header", "oscillator", "envelope", "effect", "fm", "granular",
@@ -69,7 +69,7 @@ func samplegenerationlanguageParserInit() {
 	}
 	staticData.predictionContextCache = antlr.NewPredictionContextCache()
 	staticData.serializedATN = []int32{
-		4, 1, 75, 402, 2, 0, 7, 0, 2, 1, 7, 1, 2, 2, 7, 2, 2, 3, 7, 3, 2, 4, 7,
+		4, 1, 76, 407, 2, 0, 7, 0, 2, 1, 7, 1, 2, 2, 7, 2, 2, 3, 7, 3, 2, 4, 7,
 		4, 2, 5, 7, 5, 2, 6, 7, 6, 2, 7, 7, 7, 2, 8, 7, 8, 2, 9, 7, 9, 2, 10, 7,
 		10, 2, 11, 7, 11, 2, 12, 7, 12, 2, 13, 7, 13, 2, 14, 7, 14, 2, 15, 7, 15,
 		2, 16, 7, 16, 2, 17, 7, 17, 2, 18, 7, 18, 2, 19, 7, 19, 2, 20, 7, 20, 2,
@@ -94,140 +94,144 @@ func samplegenerationlanguageParserInit() {
 		1, 11, 1, 11, 1, 11, 1, 11, 1, 11, 1, 11, 1, 11, 1, 11, 1, 11, 1, 11, 1,
 		11, 1, 11, 1, 11, 1, 12, 1, 12, 1, 12, 1, 12, 1, 12, 1, 12, 1, 12, 1, 12,
 		1, 12, 1, 12, 1, 12, 1, 12, 1, 12, 1, 13, 1, 13, 1, 14, 1, 14, 3, 14, 270,
-		8, 14, 1, 15, 1, 15, 1, 16, 1, 16, 1, 17, 1, 17, 1, 17, 1, 18, 1, 18, 1,
-		18, 1, 19, 1, 19, 1, 20, 1, 20, 1, 20, 1, 21, 1, 21, 1, 22, 1, 22, 1, 22,
-		1, 22, 1, 22, 3, 22, 294, 8, 22, 1, 23, 1, 23, 1, 23, 1, 23, 3, 23, 300,
-		8, 23, 1, 24, 1, 24, 1, 24, 1, 24, 1, 24, 1, 24, 1, 24, 1, 24, 1, 24, 1,
-		25, 1, 25, 1, 25, 1, 25, 1, 25, 1, 25, 1, 25, 1, 25, 1, 25, 1, 26, 1, 26,
-		1, 26, 1, 26, 1, 26, 1, 26, 1, 26, 1, 26, 1, 26, 1, 27, 1, 27, 1, 27, 1,
-		27, 1, 27, 1, 27, 1, 28, 1, 28, 1, 29, 1, 29, 1, 29, 1, 30, 1, 30, 1, 30,
-		1, 31, 1, 31, 1, 32, 1, 32, 1, 33, 1, 33, 1, 34, 1, 34, 1, 34, 1, 34, 1,
-		34, 1, 34, 1, 34, 1, 34, 3, 34, 357, 8, 34, 1, 35, 1, 35, 1, 36, 1, 36,
-		1, 37, 1, 37, 1, 38, 1, 38, 1, 39, 1, 39, 1, 40, 1, 40, 1, 41, 1, 41, 1,
-		42, 1, 42, 1, 43, 1, 43, 1, 44, 1, 44, 1, 45, 1, 45, 1, 45, 1, 46, 1, 46,
-		1, 47, 1, 47, 3, 47, 386, 8, 47, 1, 48, 1, 48, 1, 49, 1, 49, 1, 50, 1,
-		50, 1, 51, 1, 51, 1, 52, 1, 52, 1, 53, 1, 53, 1, 54, 1, 54, 1, 54, 0, 0,
-		55, 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34,
-		36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70,
-		72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100, 102, 104,
-		106, 108, 0, 8, 1, 0, 35, 39, 1, 0, 41, 42, 2, 0, 39, 39, 44, 49, 1, 0,
-		56, 57, 1, 0, 59, 62, 1, 0, 63, 65, 3, 0, 35, 35, 39, 39, 70, 70, 2, 0,
-		48, 49, 71, 72, 371, 0, 110, 1, 0, 0, 0, 2, 126, 1, 0, 0, 0, 4, 131, 1,
-		0, 0, 0, 6, 139, 1, 0, 0, 0, 8, 154, 1, 0, 0, 0, 10, 162, 1, 0, 0, 0, 12,
-		173, 1, 0, 0, 0, 14, 186, 1, 0, 0, 0, 16, 202, 1, 0, 0, 0, 18, 212, 1,
-		0, 0, 0, 20, 223, 1, 0, 0, 0, 22, 239, 1, 0, 0, 0, 24, 252, 1, 0, 0, 0,
-		26, 265, 1, 0, 0, 0, 28, 267, 1, 0, 0, 0, 30, 271, 1, 0, 0, 0, 32, 273,
-		1, 0, 0, 0, 34, 275, 1, 0, 0, 0, 36, 278, 1, 0, 0, 0, 38, 281, 1, 0, 0,
-		0, 40, 283, 1, 0, 0, 0, 42, 286, 1, 0, 0, 0, 44, 293, 1, 0, 0, 0, 46, 299,
-		1, 0, 0, 0, 48, 301, 1, 0, 0, 0, 50, 310, 1, 0, 0, 0, 52, 319, 1, 0, 0,
-		0, 54, 328, 1, 0, 0, 0, 56, 334, 1, 0, 0, 0, 58, 336, 1, 0, 0, 0, 60, 339,
-		1, 0, 0, 0, 62, 342, 1, 0, 0, 0, 64, 344, 1, 0, 0, 0, 66, 346, 1, 0, 0,
-		0, 68, 356, 1, 0, 0, 0, 70, 358, 1, 0, 0, 0, 72, 360, 1, 0, 0, 0, 74, 362,
-		1, 0, 0, 0, 76, 364, 1, 0, 0, 0, 78, 366, 1, 0, 0, 0, 80, 368, 1, 0, 0,
-		0, 82, 370, 1, 0, 0, 0, 84, 372, 1, 0, 0, 0, 86, 374, 1, 0, 0, 0, 88, 376,
-		1, 0, 0, 0, 90, 378, 1, 0, 0, 0, 92, 381, 1, 0, 0, 0, 94, 383, 1, 0, 0,
-		0, 96, 387, 1, 0, 0, 0, 98, 389, 1, 0, 0, 0, 100, 391, 1, 0, 0, 0, 102,
-		393, 1, 0, 0, 0, 104, 395, 1, 0, 0, 0, 106, 397, 1, 0, 0, 0, 108, 399,
-		1, 0, 0, 0, 110, 122, 3, 2, 1, 0, 111, 123, 3, 4, 2, 0, 112, 123, 3, 6,
-		3, 0, 113, 123, 3, 8, 4, 0, 114, 123, 3, 10, 5, 0, 115, 123, 3, 12, 6,
-		0, 116, 123, 3, 14, 7, 0, 117, 123, 3, 16, 8, 0, 118, 123, 3, 18, 9, 0,
-		119, 123, 3, 20, 10, 0, 120, 123, 3, 22, 11, 0, 121, 123, 3, 24, 12, 0,
-		122, 111, 1, 0, 0, 0, 122, 112, 1, 0, 0, 0, 122, 113, 1, 0, 0, 0, 122,
+		8, 14, 1, 15, 1, 15, 1, 16, 1, 16, 1, 17, 1, 17, 3, 17, 278, 8, 17, 1,
+		18, 1, 18, 3, 18, 282, 8, 18, 1, 19, 1, 19, 1, 20, 1, 20, 3, 20, 288, 8,
+		20, 1, 21, 1, 21, 1, 22, 1, 22, 1, 22, 1, 22, 1, 22, 3, 22, 297, 8, 22,
+		1, 23, 1, 23, 1, 23, 1, 23, 3, 23, 303, 8, 23, 1, 24, 1, 24, 1, 24, 1,
+		24, 1, 24, 1, 24, 1, 24, 1, 24, 1, 24, 1, 25, 1, 25, 1, 25, 1, 25, 1, 25,
+		1, 25, 1, 25, 1, 25, 1, 25, 1, 26, 1, 26, 1, 26, 1, 26, 1, 26, 1, 26, 1,
+		26, 1, 26, 1, 26, 1, 27, 1, 27, 1, 27, 1, 27, 1, 27, 1, 27, 1, 28, 1, 28,
+		1, 29, 1, 29, 3, 29, 342, 8, 29, 1, 30, 1, 30, 1, 30, 1, 31, 1, 31, 1,
+		32, 1, 32, 1, 33, 1, 33, 1, 34, 1, 34, 1, 34, 1, 34, 1, 34, 1, 34, 1, 34,
+		1, 34, 3, 34, 361, 8, 34, 1, 35, 1, 35, 1, 36, 1, 36, 1, 37, 1, 37, 1,
+		38, 1, 38, 1, 39, 1, 39, 1, 40, 1, 40, 1, 41, 1, 41, 1, 42, 1, 42, 1, 43,
+		1, 43, 1, 44, 1, 44, 1, 45, 1, 45, 3, 45, 385, 8, 45, 1, 46, 1, 46, 1,
+		47, 1, 47, 3, 47, 391, 8, 47, 1, 48, 1, 48, 1, 49, 1, 49, 1, 50, 1, 50,
+		1, 51, 1, 51, 1, 52, 1, 52, 1, 53, 1, 53, 1, 54, 1, 54, 1, 54, 0, 0, 55,
+		0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36,
+		38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72,
+		74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100, 102, 104, 106,
+		108, 0, 9, 1, 0, 35, 39, 1, 0, 41, 42, 1, 0, 43, 44, 2, 0, 39, 39, 45,
+		50, 1, 0, 57, 58, 1, 0, 60, 63, 1, 0, 64, 66, 3, 0, 35, 35, 39, 39, 71,
+		71, 2, 0, 49, 50, 72, 73, 381, 0, 110, 1, 0, 0, 0, 2, 126, 1, 0, 0, 0,
+		4, 131, 1, 0, 0, 0, 6, 139, 1, 0, 0, 0, 8, 154, 1, 0, 0, 0, 10, 162, 1,
+		0, 0, 0, 12, 173, 1, 0, 0, 0, 14, 186, 1, 0, 0, 0, 16, 202, 1, 0, 0, 0,
+		18, 212, 1, 0, 0, 0, 20, 223, 1, 0, 0, 0, 22, 239, 1, 0, 0, 0, 24, 252,
+		1, 0, 0, 0, 26, 265, 1, 0, 0, 0, 28, 267, 1, 0, 0, 0, 30, 271, 1, 0, 0,
+		0, 32, 273, 1, 0, 0, 0, 34, 275, 1, 0, 0, 0, 36, 279, 1, 0, 0, 0, 38, 283,
+		1, 0, 0, 0, 40, 285, 1, 0, 0, 0, 42, 289, 1, 0, 0, 0, 44, 296, 1, 0, 0,
+		0, 46, 302, 1, 0, 0, 0, 48, 304, 1, 0, 0, 0, 50, 313, 1, 0, 0, 0, 52, 322,
+		1, 0, 0, 0, 54, 331, 1, 0, 0, 0, 56, 337, 1, 0, 0, 0, 58, 339, 1, 0, 0,
+		0, 60, 343, 1, 0, 0, 0, 62, 346, 1, 0, 0, 0, 64, 348, 1, 0, 0, 0, 66, 350,
+		1, 0, 0, 0, 68, 360, 1, 0, 0, 0, 70, 362, 1, 0, 0, 0, 72, 364, 1, 0, 0,
+		0, 74, 366, 1, 0, 0, 0, 76, 368, 1, 0, 0, 0, 78, 370, 1, 0, 0, 0, 80, 372,
+		1, 0, 0, 0, 82, 374, 1, 0, 0, 0, 84, 376, 1, 0, 0, 0, 86, 378, 1, 0, 0,
+		0, 88, 380, 1, 0, 0, 0, 90, 382, 1, 0, 0, 0, 92, 386, 1, 0, 0, 0, 94, 388,
+		1, 0, 0, 0, 96, 392, 1, 0, 0, 0, 98, 394, 1, 0, 0, 0, 100, 396, 1, 0, 0,
+		0, 102, 398, 1, 0, 0, 0, 104, 400, 1, 0, 0, 0, 106, 402, 1, 0, 0, 0, 108,
+		404, 1, 0, 0, 0, 110, 122, 3, 2, 1, 0, 111, 123, 3, 4, 2, 0, 112, 123,
+		3, 6, 3, 0, 113, 123, 3, 8, 4, 0, 114, 123, 3, 10, 5, 0, 115, 123, 3, 12,
+		6, 0, 116, 123, 3, 14, 7, 0, 117, 123, 3, 16, 8, 0, 118, 123, 3, 18, 9,
+		0, 119, 123, 3, 20, 10, 0, 120, 123, 3, 22, 11, 0, 121, 123, 3, 24, 12,
+		0, 122, 111, 1, 0, 0, 0, 122, 112, 1, 0, 0, 0, 122, 113, 1, 0, 0, 0, 122,
 		114, 1, 0, 0, 0, 122, 115, 1, 0, 0, 0, 122, 116, 1, 0, 0, 0, 122, 117,
 		1, 0, 0, 0, 122, 118, 1, 0, 0, 0, 122, 119, 1, 0, 0, 0, 122, 120, 1, 0,
 		0, 0, 122, 121, 1, 0, 0, 0, 123, 124, 1, 0, 0, 0, 124, 122, 1, 0, 0, 0,
 		124, 125, 1, 0, 0, 0, 125, 1, 1, 0, 0, 0, 126, 127, 5, 1, 0, 0, 127, 128,
-		5, 2, 0, 0, 128, 129, 5, 3, 0, 0, 129, 130, 5, 74, 0, 0, 130, 3, 1, 0,
-		0, 0, 131, 132, 5, 4, 0, 0, 132, 133, 3, 26, 13, 0, 133, 134, 5, 73, 0,
-		0, 134, 135, 3, 28, 14, 0, 135, 136, 5, 73, 0, 0, 136, 137, 5, 5, 0, 0,
+		5, 2, 0, 0, 128, 129, 5, 3, 0, 0, 129, 130, 5, 75, 0, 0, 130, 3, 1, 0,
+		0, 0, 131, 132, 5, 4, 0, 0, 132, 133, 3, 26, 13, 0, 133, 134, 5, 74, 0,
+		0, 134, 135, 3, 28, 14, 0, 135, 136, 5, 74, 0, 0, 136, 137, 5, 5, 0, 0,
 		137, 138, 3, 30, 15, 0, 138, 5, 1, 0, 0, 0, 139, 140, 5, 6, 0, 0, 140,
-		141, 3, 32, 16, 0, 141, 142, 5, 73, 0, 0, 142, 143, 5, 7, 0, 0, 143, 144,
-		3, 34, 17, 0, 144, 145, 5, 73, 0, 0, 145, 146, 5, 8, 0, 0, 146, 147, 3,
-		36, 18, 0, 147, 148, 5, 73, 0, 0, 148, 149, 5, 9, 0, 0, 149, 150, 3, 38,
-		19, 0, 150, 151, 5, 73, 0, 0, 151, 152, 5, 10, 0, 0, 152, 153, 3, 40, 20,
+		141, 3, 32, 16, 0, 141, 142, 5, 74, 0, 0, 142, 143, 5, 7, 0, 0, 143, 144,
+		3, 34, 17, 0, 144, 145, 5, 74, 0, 0, 145, 146, 5, 8, 0, 0, 146, 147, 3,
+		36, 18, 0, 147, 148, 5, 74, 0, 0, 148, 149, 5, 9, 0, 0, 149, 150, 3, 38,
+		19, 0, 150, 151, 5, 74, 0, 0, 151, 152, 5, 10, 0, 0, 152, 153, 3, 40, 20,
 		0, 153, 7, 1, 0, 0, 0, 154, 155, 5, 11, 0, 0, 155, 158, 3, 42, 21, 0, 156,
-		157, 5, 73, 0, 0, 157, 159, 3, 44, 22, 0, 158, 156, 1, 0, 0, 0, 159, 160,
+		157, 5, 74, 0, 0, 157, 159, 3, 44, 22, 0, 158, 156, 1, 0, 0, 0, 159, 160,
 		1, 0, 0, 0, 160, 158, 1, 0, 0, 0, 160, 161, 1, 0, 0, 0, 161, 9, 1, 0, 0,
-		0, 162, 163, 5, 12, 0, 0, 163, 164, 3, 56, 28, 0, 164, 165, 5, 73, 0, 0,
-		165, 166, 3, 26, 13, 0, 166, 167, 5, 73, 0, 0, 167, 171, 3, 28, 14, 0,
-		168, 169, 5, 73, 0, 0, 169, 170, 5, 5, 0, 0, 170, 172, 3, 30, 15, 0, 171,
+		0, 162, 163, 5, 12, 0, 0, 163, 164, 3, 56, 28, 0, 164, 165, 5, 74, 0, 0,
+		165, 166, 3, 26, 13, 0, 166, 167, 5, 74, 0, 0, 167, 171, 3, 28, 14, 0,
+		168, 169, 5, 74, 0, 0, 169, 170, 5, 5, 0, 0, 170, 172, 3, 30, 15, 0, 171,
 		168, 1, 0, 0, 0, 171, 172, 1, 0, 0, 0, 172, 11, 1, 0, 0, 0, 173, 174, 5,
-		13, 0, 0, 174, 175, 5, 14, 0, 0, 175, 176, 3, 58, 29, 0, 176, 177, 5, 73,
-		0, 0, 177, 178, 5, 15, 0, 0, 178, 179, 3, 60, 30, 0, 179, 180, 5, 73, 0,
-		0, 180, 181, 5, 16, 0, 0, 181, 182, 3, 62, 31, 0, 182, 183, 5, 73, 0, 0,
+		13, 0, 0, 174, 175, 5, 14, 0, 0, 175, 176, 3, 58, 29, 0, 176, 177, 5, 74,
+		0, 0, 177, 178, 5, 15, 0, 0, 178, 179, 3, 60, 30, 0, 179, 180, 5, 74, 0,
+		0, 180, 181, 5, 16, 0, 0, 181, 182, 3, 62, 31, 0, 182, 183, 5, 74, 0, 0,
 		183, 184, 5, 17, 0, 0, 184, 185, 3, 64, 32, 0, 185, 13, 1, 0, 0, 0, 186,
-		187, 5, 18, 0, 0, 187, 188, 3, 66, 33, 0, 188, 192, 5, 73, 0, 0, 189, 191,
+		187, 5, 18, 0, 0, 187, 188, 3, 66, 33, 0, 188, 192, 5, 74, 0, 0, 189, 191,
 		3, 68, 34, 0, 190, 189, 1, 0, 0, 0, 191, 194, 1, 0, 0, 0, 192, 190, 1,
 		0, 0, 0, 192, 193, 1, 0, 0, 0, 193, 195, 1, 0, 0, 0, 194, 192, 1, 0, 0,
-		0, 195, 196, 5, 73, 0, 0, 196, 197, 5, 19, 0, 0, 197, 198, 3, 70, 35, 0,
-		198, 199, 5, 73, 0, 0, 199, 200, 5, 5, 0, 0, 200, 201, 3, 30, 15, 0, 201,
+		0, 195, 196, 5, 74, 0, 0, 196, 197, 5, 19, 0, 0, 197, 198, 3, 70, 35, 0,
+		198, 199, 5, 74, 0, 0, 199, 200, 5, 5, 0, 0, 200, 201, 3, 30, 15, 0, 201,
 		15, 1, 0, 0, 0, 202, 203, 5, 20, 0, 0, 203, 204, 5, 21, 0, 0, 204, 205,
-		3, 28, 14, 0, 205, 206, 5, 73, 0, 0, 206, 207, 5, 22, 0, 0, 207, 208, 3,
-		72, 36, 0, 208, 209, 5, 73, 0, 0, 209, 210, 5, 23, 0, 0, 210, 211, 3, 74,
+		3, 28, 14, 0, 205, 206, 5, 74, 0, 0, 206, 207, 5, 22, 0, 0, 207, 208, 3,
+		72, 36, 0, 208, 209, 5, 74, 0, 0, 209, 210, 5, 23, 0, 0, 210, 211, 3, 74,
 		37, 0, 211, 17, 1, 0, 0, 0, 212, 213, 5, 24, 0, 0, 213, 214, 5, 25, 0,
-		0, 214, 215, 3, 26, 13, 0, 215, 216, 5, 73, 0, 0, 216, 217, 5, 26, 0, 0,
-		217, 221, 3, 76, 38, 0, 218, 219, 5, 73, 0, 0, 219, 220, 5, 5, 0, 0, 220,
+		0, 214, 215, 3, 26, 13, 0, 215, 216, 5, 74, 0, 0, 216, 217, 5, 26, 0, 0,
+		217, 221, 3, 76, 38, 0, 218, 219, 5, 74, 0, 0, 219, 220, 5, 5, 0, 0, 220,
 		222, 3, 30, 15, 0, 221, 218, 1, 0, 0, 0, 221, 222, 1, 0, 0, 0, 222, 19,
 		1, 0, 0, 0, 223, 224, 5, 27, 0, 0, 224, 225, 5, 25, 0, 0, 225, 226, 3,
-		26, 13, 0, 226, 227, 5, 73, 0, 0, 227, 228, 5, 21, 0, 0, 228, 229, 3, 28,
-		14, 0, 229, 230, 5, 73, 0, 0, 230, 231, 5, 28, 0, 0, 231, 232, 3, 78, 39,
-		0, 232, 233, 5, 73, 0, 0, 233, 234, 5, 29, 0, 0, 234, 235, 3, 80, 40, 0,
-		235, 236, 5, 73, 0, 0, 236, 237, 5, 30, 0, 0, 237, 238, 3, 82, 41, 0, 238,
+		26, 13, 0, 226, 227, 5, 74, 0, 0, 227, 228, 5, 21, 0, 0, 228, 229, 3, 28,
+		14, 0, 229, 230, 5, 74, 0, 0, 230, 231, 5, 28, 0, 0, 231, 232, 3, 78, 39,
+		0, 232, 233, 5, 74, 0, 0, 233, 234, 5, 29, 0, 0, 234, 235, 3, 80, 40, 0,
+		235, 236, 5, 74, 0, 0, 236, 237, 5, 30, 0, 0, 237, 238, 3, 82, 41, 0, 238,
 		21, 1, 0, 0, 0, 239, 240, 5, 31, 0, 0, 240, 241, 5, 21, 0, 0, 241, 242,
-		3, 28, 14, 0, 242, 243, 5, 73, 0, 0, 243, 244, 5, 8, 0, 0, 244, 245, 3,
-		84, 42, 0, 245, 246, 5, 73, 0, 0, 246, 247, 5, 28, 0, 0, 247, 248, 3, 78,
-		39, 0, 248, 249, 5, 73, 0, 0, 249, 250, 5, 29, 0, 0, 250, 251, 3, 80, 40,
+		3, 28, 14, 0, 242, 243, 5, 74, 0, 0, 243, 244, 5, 8, 0, 0, 244, 245, 3,
+		84, 42, 0, 245, 246, 5, 74, 0, 0, 246, 247, 5, 28, 0, 0, 247, 248, 3, 78,
+		39, 0, 248, 249, 5, 74, 0, 0, 249, 250, 5, 29, 0, 0, 250, 251, 3, 80, 40,
 		0, 251, 23, 1, 0, 0, 0, 252, 253, 5, 32, 0, 0, 253, 254, 5, 28, 0, 0, 254,
-		255, 3, 78, 39, 0, 255, 256, 5, 73, 0, 0, 256, 257, 5, 21, 0, 0, 257, 258,
-		3, 28, 14, 0, 258, 259, 5, 73, 0, 0, 259, 260, 5, 33, 0, 0, 260, 261, 3,
-		86, 43, 0, 261, 262, 5, 73, 0, 0, 262, 263, 5, 34, 0, 0, 263, 264, 3, 88,
+		255, 3, 78, 39, 0, 255, 256, 5, 74, 0, 0, 256, 257, 5, 21, 0, 0, 257, 258,
+		3, 28, 14, 0, 258, 259, 5, 74, 0, 0, 259, 260, 5, 33, 0, 0, 260, 261, 3,
+		86, 43, 0, 261, 262, 5, 74, 0, 0, 262, 263, 5, 34, 0, 0, 263, 264, 3, 88,
 		44, 0, 264, 25, 1, 0, 0, 0, 265, 266, 7, 0, 0, 0, 266, 27, 1, 0, 0, 0,
-		267, 269, 5, 74, 0, 0, 268, 270, 5, 40, 0, 0, 269, 268, 1, 0, 0, 0, 269,
-		270, 1, 0, 0, 0, 270, 29, 1, 0, 0, 0, 271, 272, 5, 74, 0, 0, 272, 31, 1,
-		0, 0, 0, 273, 274, 7, 1, 0, 0, 274, 33, 1, 0, 0, 0, 275, 276, 5, 74, 0,
-		0, 276, 277, 5, 43, 0, 0, 277, 35, 1, 0, 0, 0, 278, 279, 5, 74, 0, 0, 279,
-		280, 5, 43, 0, 0, 280, 37, 1, 0, 0, 0, 281, 282, 5, 74, 0, 0, 282, 39,
-		1, 0, 0, 0, 283, 284, 5, 74, 0, 0, 284, 285, 5, 43, 0, 0, 285, 41, 1, 0,
-		0, 0, 286, 287, 7, 2, 0, 0, 287, 43, 1, 0, 0, 0, 288, 294, 3, 46, 23, 0,
-		289, 294, 3, 48, 24, 0, 290, 294, 3, 50, 25, 0, 291, 294, 3, 52, 26, 0,
-		292, 294, 3, 54, 27, 0, 293, 288, 1, 0, 0, 0, 293, 289, 1, 0, 0, 0, 293,
-		290, 1, 0, 0, 0, 293, 291, 1, 0, 0, 0, 293, 292, 1, 0, 0, 0, 294, 45, 1,
-		0, 0, 0, 295, 296, 5, 8, 0, 0, 296, 300, 3, 36, 18, 0, 297, 298, 5, 5,
-		0, 0, 298, 300, 3, 30, 15, 0, 299, 295, 1, 0, 0, 0, 299, 297, 1, 0, 0,
-		0, 300, 47, 1, 0, 0, 0, 301, 302, 5, 50, 0, 0, 302, 303, 3, 90, 45, 0,
-		303, 304, 5, 73, 0, 0, 304, 305, 5, 51, 0, 0, 305, 306, 3, 92, 46, 0, 306,
-		307, 5, 73, 0, 0, 307, 308, 5, 5, 0, 0, 308, 309, 3, 30, 15, 0, 309, 49,
-		1, 0, 0, 0, 310, 311, 5, 52, 0, 0, 311, 312, 3, 94, 47, 0, 312, 313, 5,
-		73, 0, 0, 313, 314, 5, 53, 0, 0, 314, 315, 3, 96, 48, 0, 315, 316, 5, 73,
-		0, 0, 316, 317, 5, 5, 0, 0, 317, 318, 3, 30, 15, 0, 318, 51, 1, 0, 0, 0,
-		319, 320, 5, 54, 0, 0, 320, 321, 3, 98, 49, 0, 321, 322, 5, 73, 0, 0, 322,
-		323, 5, 55, 0, 0, 323, 324, 3, 100, 50, 0, 324, 325, 5, 73, 0, 0, 325,
-		326, 5, 5, 0, 0, 326, 327, 3, 30, 15, 0, 327, 53, 1, 0, 0, 0, 328, 329,
-		5, 29, 0, 0, 329, 330, 3, 80, 40, 0, 330, 331, 5, 73, 0, 0, 331, 332, 5,
-		5, 0, 0, 332, 333, 3, 30, 15, 0, 333, 55, 1, 0, 0, 0, 334, 335, 7, 3, 0,
-		0, 335, 57, 1, 0, 0, 0, 336, 337, 5, 74, 0, 0, 337, 338, 5, 43, 0, 0, 338,
-		59, 1, 0, 0, 0, 339, 340, 5, 74, 0, 0, 340, 341, 5, 58, 0, 0, 341, 61,
-		1, 0, 0, 0, 342, 343, 7, 4, 0, 0, 343, 63, 1, 0, 0, 0, 344, 345, 5, 74,
-		0, 0, 345, 65, 1, 0, 0, 0, 346, 347, 7, 5, 0, 0, 347, 67, 1, 0, 0, 0, 348,
-		349, 5, 66, 0, 0, 349, 357, 3, 102, 51, 0, 350, 351, 5, 67, 0, 0, 351,
-		357, 3, 104, 52, 0, 352, 353, 5, 68, 0, 0, 353, 357, 3, 106, 53, 0, 354,
-		355, 5, 69, 0, 0, 355, 357, 3, 108, 54, 0, 356, 348, 1, 0, 0, 0, 356, 350,
-		1, 0, 0, 0, 356, 352, 1, 0, 0, 0, 356, 354, 1, 0, 0, 0, 357, 69, 1, 0,
-		0, 0, 358, 359, 7, 6, 0, 0, 359, 71, 1, 0, 0, 0, 360, 361, 5, 74, 0, 0,
-		361, 73, 1, 0, 0, 0, 362, 363, 5, 74, 0, 0, 363, 75, 1, 0, 0, 0, 364, 365,
-		5, 74, 0, 0, 365, 77, 1, 0, 0, 0, 366, 367, 7, 7, 0, 0, 367, 79, 1, 0,
-		0, 0, 368, 369, 5, 74, 0, 0, 369, 81, 1, 0, 0, 0, 370, 371, 5, 74, 0, 0,
-		371, 83, 1, 0, 0, 0, 372, 373, 5, 74, 0, 0, 373, 85, 1, 0, 0, 0, 374, 375,
-		5, 74, 0, 0, 375, 87, 1, 0, 0, 0, 376, 377, 5, 74, 0, 0, 377, 89, 1, 0,
-		0, 0, 378, 379, 5, 74, 0, 0, 379, 380, 5, 43, 0, 0, 380, 91, 1, 0, 0, 0,
-		381, 382, 5, 74, 0, 0, 382, 93, 1, 0, 0, 0, 383, 385, 5, 74, 0, 0, 384,
-		386, 5, 40, 0, 0, 385, 384, 1, 0, 0, 0, 385, 386, 1, 0, 0, 0, 386, 95,
-		1, 0, 0, 0, 387, 388, 5, 74, 0, 0, 388, 97, 1, 0, 0, 0, 389, 390, 5, 74,
-		0, 0, 390, 99, 1, 0, 0, 0, 391, 392, 5, 74, 0, 0, 392, 101, 1, 0, 0, 0,
-		393, 394, 5, 74, 0, 0, 394, 103, 1, 0, 0, 0, 395, 396, 5, 74, 0, 0, 396,
-		105, 1, 0, 0, 0, 397, 398, 5, 74, 0, 0, 398, 107, 1, 0, 0, 0, 399, 400,
-		5, 74, 0, 0, 400, 109, 1, 0, 0, 0, 11, 122, 124, 160, 171, 192, 221, 269,
-		293, 299, 356, 385,
+		267, 269, 5, 75, 0, 0, 268, 270, 5, 40, 0, 0, 269, 268, 1, 0, 0, 0, 269,
+		270, 1, 0, 0, 0, 270, 29, 1, 0, 0, 0, 271, 272, 5, 75, 0, 0, 272, 31, 1,
+		0, 0, 0, 273, 274, 7, 1, 0, 0, 274, 33, 1, 0, 0, 0, 275, 277, 5, 75, 0,
+		0, 276, 278, 7, 2, 0, 0, 277, 276, 1, 0, 0, 0, 277, 278, 1, 0, 0, 0, 278,
+		35, 1, 0, 0, 0, 279, 281, 5, 75, 0, 0, 280, 282, 7, 2, 0, 0, 281, 280,
+		1, 0, 0, 0, 281, 282, 1, 0, 0, 0, 282, 37, 1, 0, 0, 0, 283, 284, 5, 75,
+		0, 0, 284, 39, 1, 0, 0, 0, 285, 287, 5, 75, 0, 0, 286, 288, 7, 2, 0, 0,
+		287, 286, 1, 0, 0, 0, 287, 288, 1, 0, 0, 0, 288, 41, 1, 0, 0, 0, 289, 290,
+		7, 3, 0, 0, 290, 43, 1, 0, 0, 0, 291, 297, 3, 46, 23, 0, 292, 297, 3, 48,
+		24, 0, 293, 297, 3, 50, 25, 0, 294, 297, 3, 52, 26, 0, 295, 297, 3, 54,
+		27, 0, 296, 291, 1, 0, 0, 0, 296, 292, 1, 0, 0, 0, 296, 293, 1, 0, 0, 0,
+		296, 294, 1, 0, 0, 0, 296, 295, 1, 0, 0, 0, 297, 45, 1, 0, 0, 0, 298, 299,
+		5, 8, 0, 0, 299, 303, 3, 36, 18, 0, 300, 301, 5, 5, 0, 0, 301, 303, 3,
+		30, 15, 0, 302, 298, 1, 0, 0, 0, 302, 300, 1, 0, 0, 0, 303, 47, 1, 0, 0,
+		0, 304, 305, 5, 51, 0, 0, 305, 306, 3, 90, 45, 0, 306, 307, 5, 74, 0, 0,
+		307, 308, 5, 52, 0, 0, 308, 309, 3, 92, 46, 0, 309, 310, 5, 74, 0, 0, 310,
+		311, 5, 5, 0, 0, 311, 312, 3, 30, 15, 0, 312, 49, 1, 0, 0, 0, 313, 314,
+		5, 53, 0, 0, 314, 315, 3, 94, 47, 0, 315, 316, 5, 74, 0, 0, 316, 317, 5,
+		54, 0, 0, 317, 318, 3, 96, 48, 0, 318, 319, 5, 74, 0, 0, 319, 320, 5, 5,
+		0, 0, 320, 321, 3, 30, 15, 0, 321, 51, 1, 0, 0, 0, 322, 323, 5, 55, 0,
+		0, 323, 324, 3, 98, 49, 0, 324, 325, 5, 74, 0, 0, 325, 326, 5, 56, 0, 0,
+		326, 327, 3, 100, 50, 0, 327, 328, 5, 74, 0, 0, 328, 329, 5, 5, 0, 0, 329,
+		330, 3, 30, 15, 0, 330, 53, 1, 0, 0, 0, 331, 332, 5, 29, 0, 0, 332, 333,
+		3, 80, 40, 0, 333, 334, 5, 74, 0, 0, 334, 335, 5, 5, 0, 0, 335, 336, 3,
+		30, 15, 0, 336, 55, 1, 0, 0, 0, 337, 338, 7, 4, 0, 0, 338, 57, 1, 0, 0,
+		0, 339, 341, 5, 75, 0, 0, 340, 342, 7, 2, 0, 0, 341, 340, 1, 0, 0, 0, 341,
+		342, 1, 0, 0, 0, 342, 59, 1, 0, 0, 0, 343, 344, 5, 75, 0, 0, 344, 345,
+		5, 59, 0, 0, 345, 61, 1, 0, 0, 0, 346, 347, 7, 5, 0, 0, 347, 63, 1, 0,
+		0, 0, 348, 349, 5, 75, 0, 0, 349, 65, 1, 0, 0, 0, 350, 351, 7, 6, 0, 0,
+		351, 67, 1, 0, 0, 0, 352, 353, 5, 67, 0, 0, 353, 361, 3, 102, 51, 0, 354,
+		355, 5, 68, 0, 0, 355, 361, 3, 104, 52, 0, 356, 357, 5, 69, 0, 0, 357,
+		361, 3, 106, 53, 0, 358, 359, 5, 70, 0, 0, 359, 361, 3, 108, 54, 0, 360,
+		352, 1, 0, 0, 0, 360, 354, 1, 0, 0, 0, 360, 356, 1, 0, 0, 0, 360, 358,
+		1, 0, 0, 0, 361, 69, 1, 0, 0, 0, 362, 363, 7, 7, 0, 0, 363, 71, 1, 0, 0,
+		0, 364, 365, 5, 75, 0, 0, 365, 73, 1, 0, 0, 0, 366, 367, 5, 75, 0, 0, 367,
+		75, 1, 0, 0, 0, 368, 369, 5, 75, 0, 0, 369, 77, 1, 0, 0, 0, 370, 371, 7,
+		8, 0, 0, 371, 79, 1, 0, 0, 0, 372, 373, 5, 75, 0, 0, 373, 81, 1, 0, 0,
+		0, 374, 375, 5, 75, 0, 0, 375, 83, 1, 0, 0, 0, 376, 377, 5, 75, 0, 0, 377,
+		85, 1, 0, 0, 0, 378, 379, 5, 75, 0, 0, 379, 87, 1, 0, 0, 0, 380, 381, 5,
+		75, 0, 0, 381, 89, 1, 0, 0, 0, 382, 384, 5, 75, 0, 0, 383, 385, 7, 2, 0,
+		0, 384, 383, 1, 0, 0, 0, 384, 385, 1, 0, 0, 0, 385, 91, 1, 0, 0, 0, 386,
+		387, 5, 75, 0, 0, 387, 93, 1, 0, 0, 0, 388, 390, 5, 75, 0, 0, 389, 391,
+		5, 40, 0, 0, 390, 389, 1, 0, 0, 0, 390, 391, 1, 0, 0, 0, 391, 95, 1, 0,
+		0, 0, 392, 393, 5, 75, 0, 0, 393, 97, 1, 0, 0, 0, 394, 395, 5, 75, 0, 0,
+		395, 99, 1, 0, 0, 0, 396, 397, 5, 75, 0, 0, 397, 101, 1, 0, 0, 0, 398,
+		399, 5, 75, 0, 0, 399, 103, 1, 0, 0, 0, 400, 401, 5, 75, 0, 0, 401, 105,
+		1, 0, 0, 0, 402, 403, 5, 75, 0, 0, 403, 107, 1, 0, 0, 0, 404, 405, 5, 75,
+		0, 0, 405, 109, 1, 0, 0, 0, 16, 122, 124, 160, 171, 192, 221, 269, 277,
+		281, 287, 296, 302, 341, 360, 384, 390,
 	}
 	deserializer := antlr.NewATNDeserializer(nil)
 	staticData.atn = deserializer.Deserialize(staticData.serializedATN)
@@ -258,7 +262,7 @@ func NewSampleGenerationLanguageParser(input antlr.TokenStream) *SampleGeneratio
 	this.RuleNames = staticData.ruleNames
 	this.LiteralNames = staticData.literalNames
 	this.SymbolicNames = staticData.symbolicNames
-	this.GrammarFileName = "java-escape"
+	this.GrammarFileName = "SampleGenerationLanguage.g4"
 
 	return this
 }
@@ -338,9 +342,10 @@ const (
 	SampleGenerationLanguageParserT__69  = 70
 	SampleGenerationLanguageParserT__70  = 71
 	SampleGenerationLanguageParserT__71  = 72
-	SampleGenerationLanguageParserCOMMA  = 73
-	SampleGenerationLanguageParserNUMBER = 74
-	SampleGenerationLanguageParserWS     = 75
+	SampleGenerationLanguageParserT__72  = 73
+	SampleGenerationLanguageParserCOMMA  = 74
+	SampleGenerationLanguageParserNUMBER = 75
+	SampleGenerationLanguageParserWS     = 76
 )
 
 // SampleGenerationLanguageParser rules.
@@ -408,6 +413,31 @@ type IProgContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
+
+	// Getter signatures
+	Header() IHeaderContext
+	AllOscillator() []IOscillatorContext
+	Oscillator(i int) IOscillatorContext
+	AllEnvelope() []IEnvelopeContext
+	Envelope(i int) IEnvelopeContext
+	AllEffect() []IEffectContext
+	Effect(i int) IEffectContext
+	AllFm() []IFmContext
+	Fm(i int) IFmContext
+	AllGranular() []IGranularContext
+	Granular(i int) IGranularContext
+	AllPhysicalModel() []IPhysicalModelContext
+	PhysicalModel(i int) IPhysicalModelContext
+	AllAdditive() []IAdditiveContext
+	Additive(i int) IAdditiveContext
+	AllWavetable() []IWavetableContext
+	Wavetable(i int) IWavetableContext
+	AllSubtractive() []ISubtractiveContext
+	Subtractive(i int) ISubtractiveContext
+	AllKarplusStrong() []IKarplusStrongContext
+	KarplusStrong(i int) IKarplusStrongContext
+	AllFormant() []IFormantContext
+	Formant(i int) IFormantContext
 
 	// IsProgContext differentiates from other interfaces.
 	IsProgContext()
@@ -970,7 +1000,7 @@ func (p *SampleGenerationLanguageParser) Prog() (localctx IProgContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for ok := true; ok; ok = (int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&6594771024) != 0 {
+	for ok := true; ok; ok = ((int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&6594771024) != 0) {
 		p.SetState(122)
 		p.GetErrorHandler().Sync(p)
 
@@ -1059,6 +1089,9 @@ type IHeaderContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
+
+	// Getter signatures
+	NUMBER() antlr.TerminalNode
 
 	// IsHeaderContext differentiates from other interfaces.
 	IsHeaderContext()
@@ -1175,6 +1208,13 @@ type IOscillatorContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
+
+	// Getter signatures
+	Waveform() IWaveformContext
+	AllCOMMA() []antlr.TerminalNode
+	COMMA(i int) antlr.TerminalNode
+	Frequency() IFrequencyContext
+	Mix() IMixContext
 
 	// IsOscillatorContext differentiates from other interfaces.
 	IsOscillatorContext()
@@ -1355,6 +1395,15 @@ type IEnvelopeContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
+
+	// Getter signatures
+	EnvType() IEnvTypeContext
+	AllCOMMA() []antlr.TerminalNode
+	COMMA(i int) antlr.TerminalNode
+	AttackTime() IAttackTimeContext
+	DecayTime() IDecayTimeContext
+	SustainLevel() ISustainLevelContext
+	ReleaseTime() IReleaseTimeContext
 
 	// IsEnvelopeContext differentiates from other interfaces.
 	IsEnvelopeContext()
@@ -1596,6 +1645,13 @@ type IEffectContext interface {
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
+	// Getter signatures
+	EffectType() IEffectTypeContext
+	AllCOMMA() []antlr.TerminalNode
+	COMMA(i int) antlr.TerminalNode
+	AllEffectParam() []IEffectParamContext
+	EffectParam(i int) IEffectParamContext
+
 	// IsEffectContext differentiates from other interfaces.
 	IsEffectContext()
 }
@@ -1783,6 +1839,14 @@ type IFmContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
+
+	// Getter signatures
+	FmType() IFmTypeContext
+	AllCOMMA() []antlr.TerminalNode
+	COMMA(i int) antlr.TerminalNode
+	Waveform() IWaveformContext
+	Frequency() IFrequencyContext
+	Mix() IMixContext
 
 	// IsFmContext differentiates from other interfaces.
 	IsFmContext()
@@ -1995,6 +2059,14 @@ type IGranularContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
+
+	// Getter signatures
+	Size() ISizeContext
+	AllCOMMA() []antlr.TerminalNode
+	COMMA(i int) antlr.TerminalNode
+	Overlap() IOverlapContext
+	WindowFunction() IWindowFunctionContext
+	Pitch() IPitchContext
 
 	// IsGranularContext differentiates from other interfaces.
 	IsGranularContext()
@@ -2212,6 +2284,15 @@ type IPhysicalModelContext interface {
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
+	// Getter signatures
+	ModelType() IModelTypeContext
+	AllCOMMA() []antlr.TerminalNode
+	COMMA(i int) antlr.TerminalNode
+	Excitation() IExcitationContext
+	Mix() IMixContext
+	AllModelParam() []IModelParamContext
+	ModelParam(i int) IModelParamContext
+
 	// IsPhysicalModelContext differentiates from other interfaces.
 	IsPhysicalModelContext()
 }
@@ -2411,7 +2492,7 @@ func (p *SampleGenerationLanguageParser) PhysicalModel() (localctx IPhysicalMode
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for (int64((_la-66)) & ^0x3f) == 0 && ((int64(1)<<(_la-66))&15) != 0 {
+	for (int64((_la-67)) & ^0x3f) == 0 && ((int64(1)<<(_la-67))&15) != 0 {
 		{
 			p.SetState(189)
 			p.ModelParam()
@@ -2455,6 +2536,13 @@ type IAdditiveContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
+
+	// Getter signatures
+	Frequency() IFrequencyContext
+	AllCOMMA() []antlr.TerminalNode
+	COMMA(i int) antlr.TerminalNode
+	Amplitude() IAmplitudeContext
+	Phase() IPhaseContext
 
 	// IsAdditiveContext differentiates from other interfaces.
 	IsAdditiveContext()
@@ -2643,6 +2731,13 @@ type IWavetableContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
+
+	// Getter signatures
+	Waveform() IWaveformContext
+	AllCOMMA() []antlr.TerminalNode
+	COMMA(i int) antlr.TerminalNode
+	Index() IIndexContext
+	Mix() IMixContext
 
 	// IsWavetableContext differentiates from other interfaces.
 	IsWavetableContext()
@@ -2839,6 +2934,15 @@ type ISubtractiveContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
+
+	// Getter signatures
+	Waveform() IWaveformContext
+	AllCOMMA() []antlr.TerminalNode
+	COMMA(i int) antlr.TerminalNode
+	Frequency() IFrequencyContext
+	FilterType() IFilterTypeContext
+	Cutoff() ICutoffContext
+	Resonance() IResonanceContext
 
 	// IsSubtractiveContext differentiates from other interfaces.
 	IsSubtractiveContext()
@@ -3084,6 +3188,14 @@ type IKarplusStrongContext interface {
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
+	// Getter signatures
+	Frequency() IFrequencyContext
+	AllCOMMA() []antlr.TerminalNode
+	COMMA(i int) antlr.TerminalNode
+	Decay() IDecayContext
+	FilterType() IFilterTypeContext
+	Cutoff() ICutoffContext
+
 	// IsKarplusStrongContext differentiates from other interfaces.
 	IsKarplusStrongContext()
 }
@@ -3300,6 +3412,14 @@ type IFormantContext interface {
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
+	// Getter signatures
+	FilterType() IFilterTypeContext
+	AllCOMMA() []antlr.TerminalNode
+	COMMA(i int) antlr.TerminalNode
+	Frequency() IFrequencyContext
+	Bandwidth() IBandwidthContext
+	Gain() IGainContext
+
 	// IsFormantContext differentiates from other interfaces.
 	IsFormantContext()
 }
@@ -3515,7 +3635,6 @@ type IWaveformContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
-
 	// IsWaveformContext differentiates from other interfaces.
 	IsWaveformContext()
 }
@@ -3622,6 +3741,9 @@ type IFrequencyContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
+
+	// Getter signatures
+	NUMBER() antlr.TerminalNode
 
 	// IsFrequencyContext differentiates from other interfaces.
 	IsFrequencyContext()
@@ -3739,6 +3861,9 @@ type IMixContext interface {
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
+	// Getter signatures
+	NUMBER() antlr.TerminalNode
+
 	// IsMixContext differentiates from other interfaces.
 	IsMixContext()
 }
@@ -3842,7 +3967,6 @@ type IEnvTypeContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
-
 	// IsEnvTypeContext differentiates from other interfaces.
 	IsEnvTypeContext()
 }
@@ -3950,6 +4074,9 @@ type IAttackTimeContext interface {
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
 
+	// Getter signatures
+	NUMBER() antlr.TerminalNode
+
 	// IsAttackTimeContext differentiates from other interfaces.
 	IsAttackTimeContext()
 }
@@ -4021,6 +4148,7 @@ func (p *SampleGenerationLanguageParser) AttackTime() (localctx IAttackTimeConte
 
 	localctx = NewAttackTimeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 34, SampleGenerationLanguageParserRULE_attackTime)
+	var _la int
 
 	defer func() {
 		p.ExitRule()
@@ -4043,9 +4171,23 @@ func (p *SampleGenerationLanguageParser) AttackTime() (localctx IAttackTimeConte
 		p.SetState(275)
 		p.Match(SampleGenerationLanguageParserNUMBER)
 	}
-	{
-		p.SetState(276)
-		p.Match(SampleGenerationLanguageParserT__42)
+	p.SetState(277)
+	p.GetErrorHandler().Sync(p)
+	_la = p.GetTokenStream().LA(1)
+
+	if _la == SampleGenerationLanguageParserT__42 || _la == SampleGenerationLanguageParserT__43 {
+		{
+			p.SetState(276)
+			_la = p.GetTokenStream().LA(1)
+
+			if !(_la == SampleGenerationLanguageParserT__42 || _la == SampleGenerationLanguageParserT__43) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
+		}
+
 	}
 
 	return localctx
@@ -4057,6 +4199,9 @@ type IDecayTimeContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
+
+	// Getter signatures
+	NUMBER() antlr.TerminalNode
 
 	// IsDecayTimeContext differentiates from other interfaces.
 	IsDecayTimeContext()
@@ -4129,6 +4274,7 @@ func (p *SampleGenerationLanguageParser) DecayTime() (localctx IDecayTimeContext
 
 	localctx = NewDecayTimeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 36, SampleGenerationLanguageParserRULE_decayTime)
+	var _la int
 
 	defer func() {
 		p.ExitRule()
@@ -4148,12 +4294,26 @@ func (p *SampleGenerationLanguageParser) DecayTime() (localctx IDecayTimeContext
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(278)
+		p.SetState(279)
 		p.Match(SampleGenerationLanguageParserNUMBER)
 	}
-	{
-		p.SetState(279)
-		p.Match(SampleGenerationLanguageParserT__42)
+	p.SetState(281)
+	p.GetErrorHandler().Sync(p)
+	_la = p.GetTokenStream().LA(1)
+
+	if _la == SampleGenerationLanguageParserT__42 || _la == SampleGenerationLanguageParserT__43 {
+		{
+			p.SetState(280)
+			_la = p.GetTokenStream().LA(1)
+
+			if !(_la == SampleGenerationLanguageParserT__42 || _la == SampleGenerationLanguageParserT__43) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
+		}
+
 	}
 
 	return localctx
@@ -4165,6 +4325,9 @@ type ISustainLevelContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
+
+	// Getter signatures
+	NUMBER() antlr.TerminalNode
 
 	// IsSustainLevelContext differentiates from other interfaces.
 	IsSustainLevelContext()
@@ -4256,7 +4419,7 @@ func (p *SampleGenerationLanguageParser) SustainLevel() (localctx ISustainLevelC
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(281)
+		p.SetState(283)
 		p.Match(SampleGenerationLanguageParserNUMBER)
 	}
 
@@ -4269,6 +4432,9 @@ type IReleaseTimeContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
+
+	// Getter signatures
+	NUMBER() antlr.TerminalNode
 
 	// IsReleaseTimeContext differentiates from other interfaces.
 	IsReleaseTimeContext()
@@ -4341,6 +4507,7 @@ func (p *SampleGenerationLanguageParser) ReleaseTime() (localctx IReleaseTimeCon
 
 	localctx = NewReleaseTimeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 40, SampleGenerationLanguageParserRULE_releaseTime)
+	var _la int
 
 	defer func() {
 		p.ExitRule()
@@ -4360,12 +4527,26 @@ func (p *SampleGenerationLanguageParser) ReleaseTime() (localctx IReleaseTimeCon
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(283)
+		p.SetState(285)
 		p.Match(SampleGenerationLanguageParserNUMBER)
 	}
-	{
-		p.SetState(284)
-		p.Match(SampleGenerationLanguageParserT__42)
+	p.SetState(287)
+	p.GetErrorHandler().Sync(p)
+	_la = p.GetTokenStream().LA(1)
+
+	if _la == SampleGenerationLanguageParserT__42 || _la == SampleGenerationLanguageParserT__43 {
+		{
+			p.SetState(286)
+			_la = p.GetTokenStream().LA(1)
+
+			if !(_la == SampleGenerationLanguageParserT__42 || _la == SampleGenerationLanguageParserT__43) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
+		}
+
 	}
 
 	return localctx
@@ -4377,7 +4558,6 @@ type IEffectTypeContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
-
 	// IsEffectTypeContext differentiates from other interfaces.
 	IsEffectTypeContext()
 }
@@ -4464,10 +4644,10 @@ func (p *SampleGenerationLanguageParser) EffectType() (localctx IEffectTypeConte
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(286)
+		p.SetState(289)
 		_la = p.GetTokenStream().LA(1)
 
-		if !((int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&1108857476612096) != 0) {
+		if !((int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&2217165197410304) != 0) {
 			p.GetErrorHandler().RecoverInline(p)
 		} else {
 			p.GetErrorHandler().ReportMatch(p)
@@ -4484,6 +4664,13 @@ type IEffectParamContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
+
+	// Getter signatures
+	EffectReverb() IEffectReverbContext
+	EffectDelay() IEffectDelayContext
+	EffectChorus() IEffectChorusContext
+	EffectDistortion() IEffectDistortionContext
+	EffectFilter() IEffectFilterContext
 
 	// IsEffectParamContext differentiates from other interfaces.
 	IsEffectParamContext()
@@ -4649,42 +4836,42 @@ func (p *SampleGenerationLanguageParser) EffectParam() (localctx IEffectParamCon
 		}
 	}()
 
-	p.SetState(293)
+	p.SetState(296)
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
 	case SampleGenerationLanguageParserT__4, SampleGenerationLanguageParserT__7:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(288)
+			p.SetState(291)
 			p.EffectReverb()
 		}
 
-	case SampleGenerationLanguageParserT__49:
+	case SampleGenerationLanguageParserT__50:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(289)
+			p.SetState(292)
 			p.EffectDelay()
 		}
 
-	case SampleGenerationLanguageParserT__51:
+	case SampleGenerationLanguageParserT__52:
 		p.EnterOuterAlt(localctx, 3)
 		{
-			p.SetState(290)
+			p.SetState(293)
 			p.EffectChorus()
 		}
 
-	case SampleGenerationLanguageParserT__53:
+	case SampleGenerationLanguageParserT__54:
 		p.EnterOuterAlt(localctx, 4)
 		{
-			p.SetState(291)
+			p.SetState(294)
 			p.EffectDistortion()
 		}
 
 	case SampleGenerationLanguageParserT__28:
 		p.EnterOuterAlt(localctx, 5)
 		{
-			p.SetState(292)
+			p.SetState(295)
 			p.EffectFilter()
 		}
 
@@ -4701,6 +4888,10 @@ type IEffectReverbContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
+
+	// Getter signatures
+	DecayTime() IDecayTimeContext
+	Mix() IMixContext
 
 	// IsEffectReverbContext differentiates from other interfaces.
 	IsEffectReverbContext()
@@ -4818,29 +5009,29 @@ func (p *SampleGenerationLanguageParser) EffectReverb() (localctx IEffectReverbC
 		}
 	}()
 
-	p.SetState(299)
+	p.SetState(302)
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
 	case SampleGenerationLanguageParserT__7:
 		p.EnterOuterAlt(localctx, 1)
 		{
-			p.SetState(295)
+			p.SetState(298)
 			p.Match(SampleGenerationLanguageParserT__7)
 		}
 		{
-			p.SetState(296)
+			p.SetState(299)
 			p.DecayTime()
 		}
 
 	case SampleGenerationLanguageParserT__4:
 		p.EnterOuterAlt(localctx, 2)
 		{
-			p.SetState(297)
+			p.SetState(300)
 			p.Match(SampleGenerationLanguageParserT__4)
 		}
 		{
-			p.SetState(298)
+			p.SetState(301)
 			p.Mix()
 		}
 
@@ -4857,6 +5048,13 @@ type IEffectDelayContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
+
+	// Getter signatures
+	DelayTime() IDelayTimeContext
+	AllCOMMA() []antlr.TerminalNode
+	COMMA(i int) antlr.TerminalNode
+	Feedback() IFeedbackContext
+	Mix() IMixContext
 
 	// IsEffectDelayContext differentiates from other interfaces.
 	IsEffectDelayContext()
@@ -5000,24 +5198,12 @@ func (p *SampleGenerationLanguageParser) EffectDelay() (localctx IEffectDelayCon
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(301)
-		p.Match(SampleGenerationLanguageParserT__49)
-	}
-	{
-		p.SetState(302)
-		p.DelayTime()
-	}
-	{
-		p.SetState(303)
-		p.Match(SampleGenerationLanguageParserCOMMA)
-	}
-	{
 		p.SetState(304)
 		p.Match(SampleGenerationLanguageParserT__50)
 	}
 	{
 		p.SetState(305)
-		p.Feedback()
+		p.DelayTime()
 	}
 	{
 		p.SetState(306)
@@ -5025,10 +5211,22 @@ func (p *SampleGenerationLanguageParser) EffectDelay() (localctx IEffectDelayCon
 	}
 	{
 		p.SetState(307)
-		p.Match(SampleGenerationLanguageParserT__4)
+		p.Match(SampleGenerationLanguageParserT__51)
 	}
 	{
 		p.SetState(308)
+		p.Feedback()
+	}
+	{
+		p.SetState(309)
+		p.Match(SampleGenerationLanguageParserCOMMA)
+	}
+	{
+		p.SetState(310)
+		p.Match(SampleGenerationLanguageParserT__4)
+	}
+	{
+		p.SetState(311)
 		p.Mix()
 	}
 
@@ -5041,6 +5239,13 @@ type IEffectChorusContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
+
+	// Getter signatures
+	Rate() IRateContext
+	AllCOMMA() []antlr.TerminalNode
+	COMMA(i int) antlr.TerminalNode
+	Depth() IDepthContext
+	Mix() IMixContext
 
 	// IsEffectChorusContext differentiates from other interfaces.
 	IsEffectChorusContext()
@@ -5184,24 +5389,12 @@ func (p *SampleGenerationLanguageParser) EffectChorus() (localctx IEffectChorusC
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(310)
-		p.Match(SampleGenerationLanguageParserT__51)
-	}
-	{
-		p.SetState(311)
-		p.Rate()
-	}
-	{
-		p.SetState(312)
-		p.Match(SampleGenerationLanguageParserCOMMA)
-	}
-	{
 		p.SetState(313)
 		p.Match(SampleGenerationLanguageParserT__52)
 	}
 	{
 		p.SetState(314)
-		p.Depth()
+		p.Rate()
 	}
 	{
 		p.SetState(315)
@@ -5209,10 +5402,22 @@ func (p *SampleGenerationLanguageParser) EffectChorus() (localctx IEffectChorusC
 	}
 	{
 		p.SetState(316)
-		p.Match(SampleGenerationLanguageParserT__4)
+		p.Match(SampleGenerationLanguageParserT__53)
 	}
 	{
 		p.SetState(317)
+		p.Depth()
+	}
+	{
+		p.SetState(318)
+		p.Match(SampleGenerationLanguageParserCOMMA)
+	}
+	{
+		p.SetState(319)
+		p.Match(SampleGenerationLanguageParserT__4)
+	}
+	{
+		p.SetState(320)
 		p.Mix()
 	}
 
@@ -5225,6 +5430,13 @@ type IEffectDistortionContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
+
+	// Getter signatures
+	Drive() IDriveContext
+	AllCOMMA() []antlr.TerminalNode
+	COMMA(i int) antlr.TerminalNode
+	Tone() IToneContext
+	Mix() IMixContext
 
 	// IsEffectDistortionContext differentiates from other interfaces.
 	IsEffectDistortionContext()
@@ -5368,24 +5580,12 @@ func (p *SampleGenerationLanguageParser) EffectDistortion() (localctx IEffectDis
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(319)
-		p.Match(SampleGenerationLanguageParserT__53)
-	}
-	{
-		p.SetState(320)
-		p.Drive()
-	}
-	{
-		p.SetState(321)
-		p.Match(SampleGenerationLanguageParserCOMMA)
-	}
-	{
 		p.SetState(322)
 		p.Match(SampleGenerationLanguageParserT__54)
 	}
 	{
 		p.SetState(323)
-		p.Tone()
+		p.Drive()
 	}
 	{
 		p.SetState(324)
@@ -5393,10 +5593,22 @@ func (p *SampleGenerationLanguageParser) EffectDistortion() (localctx IEffectDis
 	}
 	{
 		p.SetState(325)
-		p.Match(SampleGenerationLanguageParserT__4)
+		p.Match(SampleGenerationLanguageParserT__55)
 	}
 	{
 		p.SetState(326)
+		p.Tone()
+	}
+	{
+		p.SetState(327)
+		p.Match(SampleGenerationLanguageParserCOMMA)
+	}
+	{
+		p.SetState(328)
+		p.Match(SampleGenerationLanguageParserT__4)
+	}
+	{
+		p.SetState(329)
 		p.Mix()
 	}
 
@@ -5409,6 +5621,11 @@ type IEffectFilterContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
+
+	// Getter signatures
+	Cutoff() ICutoffContext
+	COMMA() antlr.TerminalNode
+	Mix() IMixContext
 
 	// IsEffectFilterContext differentiates from other interfaces.
 	IsEffectFilterContext()
@@ -5532,23 +5749,23 @@ func (p *SampleGenerationLanguageParser) EffectFilter() (localctx IEffectFilterC
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(328)
+		p.SetState(331)
 		p.Match(SampleGenerationLanguageParserT__28)
 	}
 	{
-		p.SetState(329)
+		p.SetState(332)
 		p.Cutoff()
 	}
 	{
-		p.SetState(330)
+		p.SetState(333)
 		p.Match(SampleGenerationLanguageParserCOMMA)
 	}
 	{
-		p.SetState(331)
+		p.SetState(334)
 		p.Match(SampleGenerationLanguageParserT__4)
 	}
 	{
-		p.SetState(332)
+		p.SetState(335)
 		p.Mix()
 	}
 
@@ -5561,7 +5778,6 @@ type IFmTypeContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
-
 	// IsFmTypeContext differentiates from other interfaces.
 	IsFmTypeContext()
 }
@@ -5648,10 +5864,10 @@ func (p *SampleGenerationLanguageParser) FmType() (localctx IFmTypeContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(334)
+		p.SetState(337)
 		_la = p.GetTokenStream().LA(1)
 
-		if !(_la == SampleGenerationLanguageParserT__55 || _la == SampleGenerationLanguageParserT__56) {
+		if !(_la == SampleGenerationLanguageParserT__56 || _la == SampleGenerationLanguageParserT__57) {
 			p.GetErrorHandler().RecoverInline(p)
 		} else {
 			p.GetErrorHandler().ReportMatch(p)
@@ -5668,6 +5884,9 @@ type ISizeContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
+
+	// Getter signatures
+	NUMBER() antlr.TerminalNode
 
 	// IsSizeContext differentiates from other interfaces.
 	IsSizeContext()
@@ -5740,6 +5959,7 @@ func (p *SampleGenerationLanguageParser) Size() (localctx ISizeContext) {
 
 	localctx = NewSizeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 58, SampleGenerationLanguageParserRULE_size)
+	var _la int
 
 	defer func() {
 		p.ExitRule()
@@ -5759,12 +5979,26 @@ func (p *SampleGenerationLanguageParser) Size() (localctx ISizeContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(336)
+		p.SetState(339)
 		p.Match(SampleGenerationLanguageParserNUMBER)
 	}
-	{
-		p.SetState(337)
-		p.Match(SampleGenerationLanguageParserT__42)
+	p.SetState(341)
+	p.GetErrorHandler().Sync(p)
+	_la = p.GetTokenStream().LA(1)
+
+	if _la == SampleGenerationLanguageParserT__42 || _la == SampleGenerationLanguageParserT__43 {
+		{
+			p.SetState(340)
+			_la = p.GetTokenStream().LA(1)
+
+			if !(_la == SampleGenerationLanguageParserT__42 || _la == SampleGenerationLanguageParserT__43) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
+		}
+
 	}
 
 	return localctx
@@ -5776,6 +6010,9 @@ type IOverlapContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
+
+	// Getter signatures
+	NUMBER() antlr.TerminalNode
 
 	// IsOverlapContext differentiates from other interfaces.
 	IsOverlapContext()
@@ -5867,12 +6104,12 @@ func (p *SampleGenerationLanguageParser) Overlap() (localctx IOverlapContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(339)
+		p.SetState(343)
 		p.Match(SampleGenerationLanguageParserNUMBER)
 	}
 	{
-		p.SetState(340)
-		p.Match(SampleGenerationLanguageParserT__57)
+		p.SetState(344)
+		p.Match(SampleGenerationLanguageParserT__58)
 	}
 
 	return localctx
@@ -5884,7 +6121,6 @@ type IWindowFunctionContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
-
 	// IsWindowFunctionContext differentiates from other interfaces.
 	IsWindowFunctionContext()
 }
@@ -5971,10 +6207,10 @@ func (p *SampleGenerationLanguageParser) WindowFunction() (localctx IWindowFunct
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(342)
+		p.SetState(346)
 		_la = p.GetTokenStream().LA(1)
 
-		if !((int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&8646911284551352320) != 0) {
+		if !((int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&-1152921504606846976) != 0) {
 			p.GetErrorHandler().RecoverInline(p)
 		} else {
 			p.GetErrorHandler().ReportMatch(p)
@@ -5991,6 +6227,9 @@ type IPitchContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
+
+	// Getter signatures
+	NUMBER() antlr.TerminalNode
 
 	// IsPitchContext differentiates from other interfaces.
 	IsPitchContext()
@@ -6082,7 +6321,7 @@ func (p *SampleGenerationLanguageParser) Pitch() (localctx IPitchContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(344)
+		p.SetState(348)
 		p.Match(SampleGenerationLanguageParserNUMBER)
 	}
 
@@ -6095,7 +6334,6 @@ type IModelTypeContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
-
 	// IsModelTypeContext differentiates from other interfaces.
 	IsModelTypeContext()
 }
@@ -6182,10 +6420,10 @@ func (p *SampleGenerationLanguageParser) ModelType() (localctx IModelTypeContext
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(346)
+		p.SetState(350)
 		_la = p.GetTokenStream().LA(1)
 
-		if !((int64((_la-63)) & ^0x3f) == 0 && ((int64(1)<<(_la-63))&7) != 0) {
+		if !((int64((_la-64)) & ^0x3f) == 0 && ((int64(1)<<(_la-64))&7) != 0) {
 			p.GetErrorHandler().RecoverInline(p)
 		} else {
 			p.GetErrorHandler().ReportMatch(p)
@@ -6202,6 +6440,12 @@ type IModelParamContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
+
+	// Getter signatures
+	Stiffness() IStiffnessContext
+	Damping() IDampingContext
+	Tension() ITensionContext
+	Length() ILengthContext
 
 	// IsModelParamContext differentiates from other interfaces.
 	IsModelParamContext()
@@ -6352,47 +6596,47 @@ func (p *SampleGenerationLanguageParser) ModelParam() (localctx IModelParamConte
 	}()
 
 	p.EnterOuterAlt(localctx, 1)
-	p.SetState(356)
+	p.SetState(360)
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case SampleGenerationLanguageParserT__65:
-		{
-			p.SetState(348)
-			p.Match(SampleGenerationLanguageParserT__65)
-		}
-		{
-			p.SetState(349)
-			p.Stiffness()
-		}
-
 	case SampleGenerationLanguageParserT__66:
 		{
-			p.SetState(350)
+			p.SetState(352)
 			p.Match(SampleGenerationLanguageParserT__66)
 		}
 		{
-			p.SetState(351)
-			p.Damping()
+			p.SetState(353)
+			p.Stiffness()
 		}
 
 	case SampleGenerationLanguageParserT__67:
 		{
-			p.SetState(352)
+			p.SetState(354)
 			p.Match(SampleGenerationLanguageParserT__67)
 		}
 		{
-			p.SetState(353)
-			p.Tension()
+			p.SetState(355)
+			p.Damping()
 		}
 
 	case SampleGenerationLanguageParserT__68:
 		{
-			p.SetState(354)
+			p.SetState(356)
 			p.Match(SampleGenerationLanguageParserT__68)
 		}
 		{
-			p.SetState(355)
+			p.SetState(357)
+			p.Tension()
+		}
+
+	case SampleGenerationLanguageParserT__69:
+		{
+			p.SetState(358)
+			p.Match(SampleGenerationLanguageParserT__69)
+		}
+		{
+			p.SetState(359)
 			p.Length()
 		}
 
@@ -6409,7 +6653,6 @@ type IExcitationContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
-
 	// IsExcitationContext differentiates from other interfaces.
 	IsExcitationContext()
 }
@@ -6496,10 +6739,10 @@ func (p *SampleGenerationLanguageParser) Excitation() (localctx IExcitationConte
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(358)
+		p.SetState(362)
 		_la = p.GetTokenStream().LA(1)
 
-		if !((int64((_la-35)) & ^0x3f) == 0 && ((int64(1)<<(_la-35))&34359738385) != 0) {
+		if !((int64((_la-35)) & ^0x3f) == 0 && ((int64(1)<<(_la-35))&68719476753) != 0) {
 			p.GetErrorHandler().RecoverInline(p)
 		} else {
 			p.GetErrorHandler().ReportMatch(p)
@@ -6516,6 +6759,9 @@ type IAmplitudeContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
+
+	// Getter signatures
+	NUMBER() antlr.TerminalNode
 
 	// IsAmplitudeContext differentiates from other interfaces.
 	IsAmplitudeContext()
@@ -6607,7 +6853,7 @@ func (p *SampleGenerationLanguageParser) Amplitude() (localctx IAmplitudeContext
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(360)
+		p.SetState(364)
 		p.Match(SampleGenerationLanguageParserNUMBER)
 	}
 
@@ -6620,6 +6866,9 @@ type IPhaseContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
+
+	// Getter signatures
+	NUMBER() antlr.TerminalNode
 
 	// IsPhaseContext differentiates from other interfaces.
 	IsPhaseContext()
@@ -6711,7 +6960,7 @@ func (p *SampleGenerationLanguageParser) Phase() (localctx IPhaseContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(362)
+		p.SetState(366)
 		p.Match(SampleGenerationLanguageParserNUMBER)
 	}
 
@@ -6724,6 +6973,9 @@ type IIndexContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
+
+	// Getter signatures
+	NUMBER() antlr.TerminalNode
 
 	// IsIndexContext differentiates from other interfaces.
 	IsIndexContext()
@@ -6815,7 +7067,7 @@ func (p *SampleGenerationLanguageParser) Index() (localctx IIndexContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(364)
+		p.SetState(368)
 		p.Match(SampleGenerationLanguageParserNUMBER)
 	}
 
@@ -6828,7 +7080,6 @@ type IFilterTypeContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
-
 	// IsFilterTypeContext differentiates from other interfaces.
 	IsFilterTypeContext()
 }
@@ -6915,10 +7166,10 @@ func (p *SampleGenerationLanguageParser) FilterType() (localctx IFilterTypeConte
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(366)
+		p.SetState(370)
 		_la = p.GetTokenStream().LA(1)
 
-		if !((int64((_la-48)) & ^0x3f) == 0 && ((int64(1)<<(_la-48))&25165827) != 0) {
+		if !((int64((_la-49)) & ^0x3f) == 0 && ((int64(1)<<(_la-49))&25165827) != 0) {
 			p.GetErrorHandler().RecoverInline(p)
 		} else {
 			p.GetErrorHandler().ReportMatch(p)
@@ -6935,6 +7186,9 @@ type ICutoffContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
+
+	// Getter signatures
+	NUMBER() antlr.TerminalNode
 
 	// IsCutoffContext differentiates from other interfaces.
 	IsCutoffContext()
@@ -7026,7 +7280,7 @@ func (p *SampleGenerationLanguageParser) Cutoff() (localctx ICutoffContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(368)
+		p.SetState(372)
 		p.Match(SampleGenerationLanguageParserNUMBER)
 	}
 
@@ -7039,6 +7293,9 @@ type IResonanceContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
+
+	// Getter signatures
+	NUMBER() antlr.TerminalNode
 
 	// IsResonanceContext differentiates from other interfaces.
 	IsResonanceContext()
@@ -7130,7 +7387,7 @@ func (p *SampleGenerationLanguageParser) Resonance() (localctx IResonanceContext
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(370)
+		p.SetState(374)
 		p.Match(SampleGenerationLanguageParserNUMBER)
 	}
 
@@ -7143,6 +7400,9 @@ type IDecayContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
+
+	// Getter signatures
+	NUMBER() antlr.TerminalNode
 
 	// IsDecayContext differentiates from other interfaces.
 	IsDecayContext()
@@ -7234,7 +7494,7 @@ func (p *SampleGenerationLanguageParser) Decay() (localctx IDecayContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(372)
+		p.SetState(376)
 		p.Match(SampleGenerationLanguageParserNUMBER)
 	}
 
@@ -7247,6 +7507,9 @@ type IBandwidthContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
+
+	// Getter signatures
+	NUMBER() antlr.TerminalNode
 
 	// IsBandwidthContext differentiates from other interfaces.
 	IsBandwidthContext()
@@ -7338,7 +7601,7 @@ func (p *SampleGenerationLanguageParser) Bandwidth() (localctx IBandwidthContext
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(374)
+		p.SetState(378)
 		p.Match(SampleGenerationLanguageParserNUMBER)
 	}
 
@@ -7351,6 +7614,9 @@ type IGainContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
+
+	// Getter signatures
+	NUMBER() antlr.TerminalNode
 
 	// IsGainContext differentiates from other interfaces.
 	IsGainContext()
@@ -7442,7 +7708,7 @@ func (p *SampleGenerationLanguageParser) Gain() (localctx IGainContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(376)
+		p.SetState(380)
 		p.Match(SampleGenerationLanguageParserNUMBER)
 	}
 
@@ -7455,6 +7721,9 @@ type IDelayTimeContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
+
+	// Getter signatures
+	NUMBER() antlr.TerminalNode
 
 	// IsDelayTimeContext differentiates from other interfaces.
 	IsDelayTimeContext()
@@ -7527,6 +7796,7 @@ func (p *SampleGenerationLanguageParser) DelayTime() (localctx IDelayTimeContext
 
 	localctx = NewDelayTimeContext(p, p.GetParserRuleContext(), p.GetState())
 	p.EnterRule(localctx, 90, SampleGenerationLanguageParserRULE_delayTime)
+	var _la int
 
 	defer func() {
 		p.ExitRule()
@@ -7546,12 +7816,26 @@ func (p *SampleGenerationLanguageParser) DelayTime() (localctx IDelayTimeContext
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(378)
+		p.SetState(382)
 		p.Match(SampleGenerationLanguageParserNUMBER)
 	}
-	{
-		p.SetState(379)
-		p.Match(SampleGenerationLanguageParserT__42)
+	p.SetState(384)
+	p.GetErrorHandler().Sync(p)
+	_la = p.GetTokenStream().LA(1)
+
+	if _la == SampleGenerationLanguageParserT__42 || _la == SampleGenerationLanguageParserT__43 {
+		{
+			p.SetState(383)
+			_la = p.GetTokenStream().LA(1)
+
+			if !(_la == SampleGenerationLanguageParserT__42 || _la == SampleGenerationLanguageParserT__43) {
+				p.GetErrorHandler().RecoverInline(p)
+			} else {
+				p.GetErrorHandler().ReportMatch(p)
+				p.Consume()
+			}
+		}
+
 	}
 
 	return localctx
@@ -7563,6 +7847,9 @@ type IFeedbackContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
+
+	// Getter signatures
+	NUMBER() antlr.TerminalNode
 
 	// IsFeedbackContext differentiates from other interfaces.
 	IsFeedbackContext()
@@ -7654,7 +7941,7 @@ func (p *SampleGenerationLanguageParser) Feedback() (localctx IFeedbackContext) 
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(381)
+		p.SetState(386)
 		p.Match(SampleGenerationLanguageParserNUMBER)
 	}
 
@@ -7667,6 +7954,9 @@ type IRateContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
+
+	// Getter signatures
+	NUMBER() antlr.TerminalNode
 
 	// IsRateContext differentiates from other interfaces.
 	IsRateContext()
@@ -7759,16 +8049,16 @@ func (p *SampleGenerationLanguageParser) Rate() (localctx IRateContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(383)
+		p.SetState(388)
 		p.Match(SampleGenerationLanguageParserNUMBER)
 	}
-	p.SetState(385)
+	p.SetState(390)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	if _la == SampleGenerationLanguageParserT__39 {
 		{
-			p.SetState(384)
+			p.SetState(389)
 			p.Match(SampleGenerationLanguageParserT__39)
 		}
 
@@ -7783,6 +8073,9 @@ type IDepthContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
+
+	// Getter signatures
+	NUMBER() antlr.TerminalNode
 
 	// IsDepthContext differentiates from other interfaces.
 	IsDepthContext()
@@ -7874,7 +8167,7 @@ func (p *SampleGenerationLanguageParser) Depth() (localctx IDepthContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(387)
+		p.SetState(392)
 		p.Match(SampleGenerationLanguageParserNUMBER)
 	}
 
@@ -7887,6 +8180,9 @@ type IDriveContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
+
+	// Getter signatures
+	NUMBER() antlr.TerminalNode
 
 	// IsDriveContext differentiates from other interfaces.
 	IsDriveContext()
@@ -7978,7 +8274,7 @@ func (p *SampleGenerationLanguageParser) Drive() (localctx IDriveContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(389)
+		p.SetState(394)
 		p.Match(SampleGenerationLanguageParserNUMBER)
 	}
 
@@ -7991,6 +8287,9 @@ type IToneContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
+
+	// Getter signatures
+	NUMBER() antlr.TerminalNode
 
 	// IsToneContext differentiates from other interfaces.
 	IsToneContext()
@@ -8082,7 +8381,7 @@ func (p *SampleGenerationLanguageParser) Tone() (localctx IToneContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(391)
+		p.SetState(396)
 		p.Match(SampleGenerationLanguageParserNUMBER)
 	}
 
@@ -8095,6 +8394,9 @@ type IStiffnessContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
+
+	// Getter signatures
+	NUMBER() antlr.TerminalNode
 
 	// IsStiffnessContext differentiates from other interfaces.
 	IsStiffnessContext()
@@ -8186,7 +8488,7 @@ func (p *SampleGenerationLanguageParser) Stiffness() (localctx IStiffnessContext
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(393)
+		p.SetState(398)
 		p.Match(SampleGenerationLanguageParserNUMBER)
 	}
 
@@ -8199,6 +8501,9 @@ type IDampingContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
+
+	// Getter signatures
+	NUMBER() antlr.TerminalNode
 
 	// IsDampingContext differentiates from other interfaces.
 	IsDampingContext()
@@ -8290,7 +8595,7 @@ func (p *SampleGenerationLanguageParser) Damping() (localctx IDampingContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(395)
+		p.SetState(400)
 		p.Match(SampleGenerationLanguageParserNUMBER)
 	}
 
@@ -8303,6 +8608,9 @@ type ITensionContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
+
+	// Getter signatures
+	NUMBER() antlr.TerminalNode
 
 	// IsTensionContext differentiates from other interfaces.
 	IsTensionContext()
@@ -8394,7 +8702,7 @@ func (p *SampleGenerationLanguageParser) Tension() (localctx ITensionContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(397)
+		p.SetState(402)
 		p.Match(SampleGenerationLanguageParserNUMBER)
 	}
 
@@ -8407,6 +8715,9 @@ type ILengthContext interface {
 
 	// GetParser returns the parser.
 	GetParser() antlr.Parser
+
+	// Getter signatures
+	NUMBER() antlr.TerminalNode
 
 	// IsLengthContext differentiates from other interfaces.
 	IsLengthContext()
@@ -8498,7 +8809,7 @@ func (p *SampleGenerationLanguageParser) Length() (localctx ILengthContext) {
 
 	p.EnterOuterAlt(localctx, 1)
 	{
-		p.SetState(399)
+		p.SetState(404)
 		p.Match(SampleGenerationLanguageParserNUMBER)
 	}
 
