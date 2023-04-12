@@ -956,6 +956,16 @@ func (s *ProgContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *ProgContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitProg(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *SampleGenerationLanguageParser) Prog() (localctx IProgContext) {
 	this := p
 	_ = this
@@ -1137,6 +1147,16 @@ func (s *HeaderContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *HeaderContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitHeader(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *SampleGenerationLanguageParser) Header() (localctx IHeaderContext) {
 	this := p
 	_ = this
@@ -1299,6 +1319,16 @@ func (s *OscillatorContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *OscillatorContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(SampleGenerationLanguageListener); ok {
 		listenerT.ExitOscillator(s)
+	}
+}
+
+func (s *OscillatorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitOscillator(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -1510,6 +1540,16 @@ func (s *EnvelopeContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *EnvelopeContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(SampleGenerationLanguageListener); ok {
 		listenerT.ExitEnvelope(s)
+	}
+}
+
+func (s *EnvelopeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitEnvelope(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -1727,6 +1767,16 @@ func (s *EffectContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *EffectContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitEffect(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *SampleGenerationLanguageParser) Effect() (localctx IEffectContext) {
 	this := p
 	_ = this
@@ -1917,6 +1967,16 @@ func (s *FmContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *FmContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(SampleGenerationLanguageListener); ok {
 		listenerT.ExitFm(s)
+	}
+}
+
+func (s *FmContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitFm(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -2127,6 +2187,16 @@ func (s *GranularContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *GranularContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(SampleGenerationLanguageListener); ok {
 		listenerT.ExitGranular(s)
+	}
+}
+
+func (s *GranularContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitGranular(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -2370,6 +2440,16 @@ func (s *PhysicalModelContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *PhysicalModelContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitPhysicalModel(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *SampleGenerationLanguageParser) PhysicalModel() (localctx IPhysicalModelContext) {
 	this := p
 	_ = this
@@ -2570,6 +2650,16 @@ func (s *AdditiveContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *AdditiveContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitAdditive(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *SampleGenerationLanguageParser) Additive() (localctx IAdditiveContext) {
 	this := p
 	_ = this
@@ -2752,6 +2842,16 @@ func (s *WavetableContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *WavetableContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(SampleGenerationLanguageListener); ok {
 		listenerT.ExitWavetable(s)
+	}
+}
+
+func (s *WavetableContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitWavetable(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -2982,6 +3082,16 @@ func (s *SubtractiveContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *SubtractiveContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitSubtractive(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *SampleGenerationLanguageParser) Subtractive() (localctx ISubtractiveContext) {
 	this := p
 	_ = this
@@ -3208,6 +3318,16 @@ func (s *KarplusStrongContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *KarplusStrongContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitKarplusStrong(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *SampleGenerationLanguageParser) KarplusStrong() (localctx IKarplusStrongContext) {
 	this := p
 	_ = this
@@ -3422,6 +3542,16 @@ func (s *FormantContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *FormantContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitFormant(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *SampleGenerationLanguageParser) Formant() (localctx IFormantContext) {
 	this := p
 	_ = this
@@ -3554,6 +3684,16 @@ func (s *WaveformContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *WaveformContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitWaveform(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *SampleGenerationLanguageParser) Waveform() (localctx IWaveformContext) {
 	this := p
 	_ = this
@@ -3656,6 +3796,16 @@ func (s *FrequencyContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *FrequencyContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(SampleGenerationLanguageListener); ok {
 		listenerT.ExitFrequency(s)
+	}
+}
+
+func (s *FrequencyContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitFrequency(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -3768,6 +3918,16 @@ func (s *MixContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *MixContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitMix(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *SampleGenerationLanguageParser) Mix() (localctx IMixContext) {
 	this := p
 	_ = this
@@ -3853,6 +4013,16 @@ func (s *EnvTypeContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *EnvTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(SampleGenerationLanguageListener); ok {
 		listenerT.ExitEnvType(s)
+	}
+}
+
+func (s *EnvTypeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitEnvType(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -3958,6 +4128,16 @@ func (s *AttackTimeContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *AttackTimeContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(SampleGenerationLanguageListener); ok {
 		listenerT.ExitAttackTime(s)
+	}
+}
+
+func (s *AttackTimeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitAttackTime(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -4077,6 +4257,16 @@ func (s *DecayTimeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *DecayTimeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitDecayTime(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *SampleGenerationLanguageParser) DecayTime() (localctx IDecayTimeContext) {
 	this := p
 	_ = this
@@ -4193,6 +4383,16 @@ func (s *SustainLevelContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *SustainLevelContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitSustainLevel(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *SampleGenerationLanguageParser) SustainLevel() (localctx ISustainLevelContext) {
 	this := p
 	_ = this
@@ -4287,6 +4487,16 @@ func (s *ReleaseTimeContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ReleaseTimeContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(SampleGenerationLanguageListener); ok {
 		listenerT.ExitReleaseTime(s)
+	}
+}
+
+func (s *ReleaseTimeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitReleaseTime(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -4394,6 +4604,16 @@ func (s *EffectTypeContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *EffectTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(SampleGenerationLanguageListener); ok {
 		listenerT.ExitEffectType(s)
+	}
+}
+
+func (s *EffectTypeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitEffectType(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -4582,6 +4802,16 @@ func (s *EffectParamContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *EffectParamContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitEffectParam(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *SampleGenerationLanguageParser) EffectParam() (localctx IEffectParamContext) {
 	this := p
 	_ = this
@@ -4742,6 +4972,16 @@ func (s *EffectReverbContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *EffectReverbContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(SampleGenerationLanguageListener); ok {
 		listenerT.ExitEffectReverb(s)
+	}
+}
+
+func (s *EffectReverbContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitEffectReverb(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -4919,6 +5159,16 @@ func (s *EffectDelayContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *EffectDelayContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(SampleGenerationLanguageListener); ok {
 		listenerT.ExitEffectDelay(s)
+	}
+}
+
+func (s *EffectDelayContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitEffectDelay(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -5103,6 +5353,16 @@ func (s *EffectChorusContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *EffectChorusContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitEffectChorus(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *SampleGenerationLanguageParser) EffectChorus() (localctx IEffectChorusContext) {
 	this := p
 	_ = this
@@ -5284,6 +5544,16 @@ func (s *EffectDistortionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *EffectDistortionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitEffectDistortion(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *SampleGenerationLanguageParser) EffectDistortion() (localctx IEffectDistortionContext) {
 	this := p
 	_ = this
@@ -5443,6 +5713,16 @@ func (s *EffectFilterContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *EffectFilterContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitEffectFilter(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *SampleGenerationLanguageParser) EffectFilter() (localctx IEffectFilterContext) {
 	this := p
 	_ = this
@@ -5544,6 +5824,16 @@ func (s *FmTypeContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *FmTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(SampleGenerationLanguageListener); ok {
 		listenerT.ExitFmType(s)
+	}
+}
+
+func (s *FmTypeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitFmType(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -5649,6 +5939,16 @@ func (s *SizeContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *SizeContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(SampleGenerationLanguageListener); ok {
 		listenerT.ExitSize(s)
+	}
+}
+
+func (s *SizeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitSize(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -5768,6 +6068,16 @@ func (s *OverlapContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *OverlapContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitOverlap(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *SampleGenerationLanguageParser) Overlap() (localctx IOverlapContext) {
 	this := p
 	_ = this
@@ -5857,6 +6167,16 @@ func (s *WindowFunctionContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *WindowFunctionContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(SampleGenerationLanguageListener); ok {
 		listenerT.ExitWindowFunction(s)
+	}
+}
+
+func (s *WindowFunctionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitWindowFunction(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -5965,6 +6285,16 @@ func (s *PitchContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *PitchContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitPitch(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *SampleGenerationLanguageParser) Pitch() (localctx IPitchContext) {
 	this := p
 	_ = this
@@ -6050,6 +6380,16 @@ func (s *ModelTypeContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ModelTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(SampleGenerationLanguageListener); ok {
 		listenerT.ExitModelType(s)
+	}
+}
+
+func (s *ModelTypeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitModelType(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -6221,6 +6561,16 @@ func (s *ModelParamContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *ModelParamContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitModelParam(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *SampleGenerationLanguageParser) ModelParam() (localctx IModelParamContext) {
 	this := p
 	_ = this
@@ -6352,6 +6702,16 @@ func (s *ExcitationContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *ExcitationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitExcitation(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *SampleGenerationLanguageParser) Excitation() (localctx IExcitationContext) {
 	this := p
 	_ = this
@@ -6457,6 +6817,16 @@ func (s *AmplitudeContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *AmplitudeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitAmplitude(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *SampleGenerationLanguageParser) Amplitude() (localctx IAmplitudeContext) {
 	this := p
 	_ = this
@@ -6551,6 +6921,16 @@ func (s *PhaseContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *PhaseContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(SampleGenerationLanguageListener); ok {
 		listenerT.ExitPhase(s)
+	}
+}
+
+func (s *PhaseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitPhase(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -6651,6 +7031,16 @@ func (s *IndexContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *IndexContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitIndex(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *SampleGenerationLanguageParser) Index() (localctx IIndexContext) {
 	this := p
 	_ = this
@@ -6736,6 +7126,16 @@ func (s *FilterTypeContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *FilterTypeContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(SampleGenerationLanguageListener); ok {
 		listenerT.ExitFilterType(s)
+	}
+}
+
+func (s *FilterTypeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitFilterType(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -6844,6 +7244,16 @@ func (s *CutoffContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *CutoffContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitCutoff(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *SampleGenerationLanguageParser) Cutoff() (localctx ICutoffContext) {
 	this := p
 	_ = this
@@ -6938,6 +7348,16 @@ func (s *ResonanceContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *ResonanceContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(SampleGenerationLanguageListener); ok {
 		listenerT.ExitResonance(s)
+	}
+}
+
+func (s *ResonanceContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitResonance(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -7038,6 +7458,16 @@ func (s *DecayContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *DecayContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitDecay(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *SampleGenerationLanguageParser) Decay() (localctx IDecayContext) {
 	this := p
 	_ = this
@@ -7132,6 +7562,16 @@ func (s *BandwidthContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *BandwidthContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(SampleGenerationLanguageListener); ok {
 		listenerT.ExitBandwidth(s)
+	}
+}
+
+func (s *BandwidthContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitBandwidth(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -7232,6 +7672,16 @@ func (s *GainContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *GainContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitGain(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *SampleGenerationLanguageParser) Gain() (localctx IGainContext) {
 	this := p
 	_ = this
@@ -7326,6 +7776,16 @@ func (s *DelayTimeContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *DelayTimeContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(SampleGenerationLanguageListener); ok {
 		listenerT.ExitDelayTime(s)
+	}
+}
+
+func (s *DelayTimeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitDelayTime(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -7445,6 +7905,16 @@ func (s *FeedbackContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *FeedbackContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitFeedback(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *SampleGenerationLanguageParser) Feedback() (localctx IFeedbackContext) {
 	this := p
 	_ = this
@@ -7539,6 +8009,16 @@ func (s *RateContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *RateContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(SampleGenerationLanguageListener); ok {
 		listenerT.ExitRate(s)
+	}
+}
+
+func (s *RateContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitRate(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -7651,6 +8131,16 @@ func (s *DepthContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *DepthContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitDepth(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *SampleGenerationLanguageParser) Depth() (localctx IDepthContext) {
 	this := p
 	_ = this
@@ -7745,6 +8235,16 @@ func (s *DriveContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *DriveContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(SampleGenerationLanguageListener); ok {
 		listenerT.ExitDrive(s)
+	}
+}
+
+func (s *DriveContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitDrive(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -7845,6 +8345,16 @@ func (s *ToneContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *ToneContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitTone(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *SampleGenerationLanguageParser) Tone() (localctx IToneContext) {
 	this := p
 	_ = this
@@ -7939,6 +8449,16 @@ func (s *StiffnessContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *StiffnessContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(SampleGenerationLanguageListener); ok {
 		listenerT.ExitStiffness(s)
+	}
+}
+
+func (s *StiffnessContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitStiffness(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
@@ -8039,6 +8559,16 @@ func (s *DampingContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *DampingContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitDamping(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *SampleGenerationLanguageParser) Damping() (localctx IDampingContext) {
 	this := p
 	_ = this
@@ -8136,6 +8666,16 @@ func (s *TensionContext) ExitRule(listener antlr.ParseTreeListener) {
 	}
 }
 
+func (s *TensionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitTension(s)
+
+	default:
+		return t.VisitChildren(s)
+	}
+}
+
 func (p *SampleGenerationLanguageParser) Tension() (localctx ITensionContext) {
 	this := p
 	_ = this
@@ -8230,6 +8770,16 @@ func (s *LengthContext) EnterRule(listener antlr.ParseTreeListener) {
 func (s *LengthContext) ExitRule(listener antlr.ParseTreeListener) {
 	if listenerT, ok := listener.(SampleGenerationLanguageListener); ok {
 		listenerT.ExitLength(s)
+	}
+}
+
+func (s *LengthContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
+	switch t := visitor.(type) {
+	case SampleGenerationLanguageVisitor:
+		return t.VisitLength(s)
+
+	default:
+		return t.VisitChildren(s)
 	}
 }
 
