@@ -1,6 +1,9 @@
 package main
 
-import "time"
+import (
+	"fmt"
+	"time"
+)
 
 type SGLData struct {
 	Oscillators    []OscillatorData
@@ -133,20 +136,31 @@ type Formant struct {
 }
 
 func GenerateAudioData(listener *SGLCustomListener, sampleRate int) ([]float64, error) {
+	// Set the desired audio length in seconds
+	audioLength := 5.0
+	// Calculate the length in samples
+	lengthInSamples := int(audioLength * float64(sampleRate))
 	// Placeholder for the generated audio data
-	audioData := make([]float64, sampleRate)
+	audioData := make([]float64, lengthInSamples)
 
 	// Process oscillators
-	for _, osc := range listener.oscillators {
+	for i, osc := range listener.oscillators {
 		oscData := GenerateOscillatorData(&osc, sampleRate)
+		fmt.Printf("Oscillator %d data: %v\n", i, oscData[:10]) // Add this line
+
+		// Ensure that both signals have the same length
+		if len(oscData) < len(audioData) {
+			oscData = append(oscData, make([]float64, len(audioData)-len(oscData))...)
+		} else if len(oscData) > len(audioData) {
+			audioData = append(audioData, make([]float64, len(oscData)-len(audioData))...)
+		}
+
 		audioData = MixAudio(audioData, oscData, osc.Mix)
 	}
-
 	// Process envelopes
 	for _, env := range listener.envelopes {
 		audioData = ApplyEnvelope(audioData, env, sampleRate)
 	}
-
 	// Process effects
 	var err error
 	for _, eff := range listener.effects {
@@ -155,26 +169,45 @@ func GenerateAudioData(listener *SGLCustomListener, sampleRate int) ([]float64, 
 			return []float64{}, err
 		}
 	}
-
 	return audioData, nil
 }
 
 func GenerateOscillatorData(osc *OscillatorData, sampleRate int) []float64 {
 	oscData := make([]float64, sampleRate)
-	duration := time.Duration(float64(sampleRate) / osc.Frequency * float64(time.Second))
+	duration := time.Duration(float64(time.Second) / osc.Frequency)
 
+	fmt.Printf("Oscillator waveform: %s, frequency: %f, duration: %s\n", osc.Waveform, osc.Frequency, duration)
+
+	waveformIndex := -1
 	switch osc.Waveform {
-	case "sine":
+	case "Sine":
+		waveformIndex = Sine
+	case "Sawtooth":
+		waveformIndex = Sawtooth
+	case "Square":
+		waveformIndex = Square
+	case "Triangle":
+		waveformIndex = Triangle
+	case "Noise":
+		waveformIndex = Noise
+	}
+
+	fmt.Printf("Waveform index: %d\n", waveformIndex)
+
+	switch waveformIndex {
+	case Sine:
 		oscData = GenerateSineWave(osc.Frequency, duration, 1, sampleRate)
-	case "sawtooth":
+	case Sawtooth:
 		oscData = GenerateSawtoothWave(osc.Frequency, duration, 1, sampleRate)
-	case "square":
+	case Square:
 		oscData = GenerateSquareWave(osc.Frequency, duration, 1, sampleRate)
-	case "triangle":
+	case Triangle:
 		oscData = GenerateTriangleWave(osc.Frequency, duration, 1, sampleRate)
-	case "noise":
+	case Noise:
 		oscData = GenerateNoise(osc.Waveform, duration, int(osc.Amplitude), sampleRate)
 	}
+
+	fmt.Printf("Generated oscillator data: %v\n", oscData[:10])
 	return oscData
 }
 

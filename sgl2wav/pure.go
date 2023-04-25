@@ -283,11 +283,13 @@ func GenerateDistortedSineWave(frequency float64, duration time.Duration, amplit
 
 // MixAudio mixes two signals with the specified mix ratio.
 func MixAudio(signal1, signal2 []float64, mix float64) []float64 {
-	mixedSignal := make([]float64, len(signal1))
+	if len(signal1) != len(signal2) {
+		panic("Input signals have different lengths")
+	}
 
+	mixedSignal := make([]float64, len(signal1))
 	for i := 0; i < len(signal1); i++ {
 		mixedSignal[i] = signal1[i]*(1-mix) + signal2[i]*mix
 	}
-
 	return mixedSignal
 }

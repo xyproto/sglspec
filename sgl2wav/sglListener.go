@@ -33,12 +33,12 @@ func NewSGLCustomListener() *SGLCustomListener {
 func (l *SGLCustomListener) EnterOscillator(ctx *parser.OscillatorContext) {
 	fmt.Println("OscillatorContext", *ctx)
 	oscillator := OscillatorData{
-		Waveform:   ctx.Waveform().GetText(),
-		Frequency:  parseFloat(ctx.Frequency().GetText()),
-		Amplitude:  parseFloat(ctx.Mix().GetText()),
+		Waveform:  ctx.Waveform().GetText(),
+		Frequency: parseFloat(ctx.Frequency().GetText()),
+		Amplitude: parseFloat(ctx.Mix().GetText()),
 		//PhaseShift: parseFloat(ctx.PhaseShift().GetText()),
 		//Duration:   ctx.Duration().GetDuration(),
-		Mix:        parseFloat(ctx.Mix().GetText()),
+		Mix: parseFloat(ctx.Mix().GetText()),
 	}
 	fmt.Println("Oscillator", oscillator)
 	l.oscillators = append(l.oscillators, oscillator)
